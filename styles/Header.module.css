@@ -1,0 +1,12 @@
+.logo {
+    border-radius: 50%;
+    height: 0.5em;
+    padding: 30px;
+  }
+  .navbar{
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      font-size: 1em;
+  }
+  

@@ -1,7 +1,17 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import Head from "next/head";
+import Script from "next/script";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function Layout({ children }) {
+  return <div style={{ backgroundColor: "#bbbdc4" }}>{children}</div>;
 }
 
-export default MyApp
+function MyApp({ Component, pageProps }) {
+  return (
+    // <Layout>
+    <Component {...pageProps} />
+    // </Layout>
+  );
+}
+
+export default MyApp;
