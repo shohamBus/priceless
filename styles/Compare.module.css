@@ -21,3 +21,10 @@ height: 100%;
       height: 100%;
       margin: 10px;
   }
+  .products{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 5px;
+      /* justify-content: flex-start; */
+  }

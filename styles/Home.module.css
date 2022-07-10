@@ -1,7 +1,6 @@
 .container {
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
   text-align: center;
- 
 }
 
 .main {
@@ -116,11 +115,4 @@
     flex-direction: column;
   }
 }
-.supers{
-  padding: 10px;
-  margin: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
+

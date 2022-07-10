@@ -1,16 +1,14 @@
 import "../styles/globals.css";
-import Head from "next/head";
-import Script from "next/script";
+import { SessionProvider } from "next-auth/react";
+import CompareContextProvider from "../context/CompareContext";
 
-function Layout({ children }) {
-  return <div style={{ backgroundColor: "#bbbdc4" }}>{children}</div>;
-}
-
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
-    // <Layout>
-    <Component {...pageProps} />
-    // </Layout>
+    <SessionProvider session={session}>
+      <CompareContextProvider>
+        <Component {...pageProps} />
+      </CompareContextProvider>
+    </SessionProvider>
   );
 }
 

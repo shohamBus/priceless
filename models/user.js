@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-var user = new Schema({
+const user = new Schema({
   name: {
     type: String,
     required: true,
@@ -10,18 +10,14 @@ var user = new Schema({
     type: String,
     required: true,
   },
-  password: {
-    type: String,
-    required: true,
-  },
   since: {
     type: Date,
-    default: Date.now,
   },
+  // cart: [],
 });
 
 mongoose.models = {};
 
-var User = mongoose.model("User", user);
+const User = mongoose.model("User", user);
 
 export default User;
