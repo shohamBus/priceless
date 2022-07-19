@@ -8,12 +8,14 @@ import { Container } from "react-bootstrap";
 
 export const SupersCheckbox = () => {
   const { supers, setSupers } = useCompare();
+  //check or not check the choosen super
   const handleChange = (obj) => {
     setSupers((prevState) => {
       const newSupers = prevState.map((item) => {
         return item.name === obj.name
           ? {
               name: item.name,
+              nameheb: item.nameheb,
               checked: !item.checked,
               _id: item._id,
             }
@@ -33,8 +35,8 @@ export const SupersCheckbox = () => {
         }}
       >
         <Container
-          maxWidth="xl"
           sx={{
+            maxWidth: "xl",
             display: "flex",
             justifyContent: "center",
             padding: "5px",
@@ -50,33 +52,87 @@ export const SupersCheckbox = () => {
                 display: { xs: "flex", md: "flex" },
               }}
             >
-              <MenuItem className={styles.imageclass}>
-                {" "}
+              <MenuItem
+                className={styles.imageclass}
+                onClick={(e) => handleChange(supers[0])}
+              >
+                {supers[0].checked && (
+                  <Image
+                    src="/super.png"
+                    width={40}
+                    height={40}
+                    alt="rami-levi"
+                  />
+                )}
+
                 <Image
                   src="/victory.png"
                   width={120}
                   height={40}
                   alt="victory"
-                  onClick={(e) => handleChange(supers[0])}
                 />
+                {!supers[0].checked && (
+                  <Image
+                    src="/click.png"
+                    width={20}
+                    height={20}
+                    alt="rami-levi"
+                  />
+                )}
               </MenuItem>
-              <MenuItem className={styles.imageclass}>
+              <MenuItem
+                className={styles.imageclass}
+                onClick={(e) => handleChange(supers[1])}
+              >
+                {supers[1].checked && (
+                  <Image
+                    src="/super.png"
+                    width={40}
+                    height={40}
+                    alt="rami-levi"
+                  />
+                )}
                 <Image
                   src="/shufersal.png"
                   width={120}
                   height={40}
                   alt="sufersal"
-                  onClick={(e) => handleChange(supers[1])}
                 />
+                {!supers[1].checked && (
+                  <Image
+                    src="/click.png"
+                    width={20}
+                    height={20}
+                    alt="rami-levi"
+                  />
+                )}
               </MenuItem>
-              <MenuItem className={styles.imageclass}>
+              <MenuItem
+                className={styles.imageclass}
+                onClick={(e) => handleChange(supers[2])}
+              >
+                {supers[2].checked && (
+                  <Image
+                    src="/super.png"
+                    width={40}
+                    height={40}
+                    alt="rami-levi"
+                  />
+                )}
                 <Image
                   src="/rami-levi.png"
                   width={120}
                   height={40}
                   alt="rami-levi"
-                  onClick={(e) => handleChange(supers[2])}
                 />
+                {!supers[2].checked && (
+                  <Image
+                    src="/click.png"
+                    width={20}
+                    height={20}
+                    alt="rami-levi"
+                  />
+                )}
               </MenuItem>
             </Box>{" "}
           </Toolbar>

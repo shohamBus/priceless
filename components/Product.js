@@ -3,17 +3,16 @@ import Image from "next/image";
 import Card from "@mui/material/Card";
 import style from "../styles/Product.module.css";
 import {
-  Button,
   CardActionArea,
   CardContent,
   CardMedia,
-  Link,
   Typography,
 } from "@mui/material";
 import { useCompare } from "../context/CompareContext";
 
 function Product({ product }) {
   const { addToCart } = useCompare();
+  //product card
   return (
     <div className={style.product}>
       <Card onClick={() => addToCart(product)}>

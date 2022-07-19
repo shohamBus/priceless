@@ -1,31 +1,19 @@
 import Product from "./Product";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
 import style from "../styles/Compare.module.css";
-import { Autocomplete, Stack, TextField, Button } from "@mui/material";
+import {
+  Autocomplete,
+  Stack,
+  TextField,
+  Button,
+  InputAdornment,
+} from "@mui/material";
 import { useCompare } from "../context/CompareContext";
 import Cart from "./Cart";
-import { ButtonGroup } from "react-bootstrap";
-// import { Cart } from "./Cart";
-// import { SupersCheckbox } from "./SupersCheckbox";
+import Image from "next/image";
 
 export const Compare = () => {
-  const {
-    supers,
-    products,
-    setProductsFilter,
-    productsFilter,
-    cartProducts,
-    setCartProducts,
-    decrement,
-    addToCart,
-    categoryFetch,
-  } = useCompare();
+  const { products, setProductsFilter, productsFilter, categoryFetch } =
+    useCompare();
   //   filter by name
   const filterName = (inp) => {
     setProductsFilter(
@@ -40,38 +28,82 @@ export const Compare = () => {
           <Cart />
         </div>
         <div className={style.main}>
-          <Stack spacing={2}>
+          <Stack dir="rtl" spacing={2}>
             <Autocomplete
-              dir="rtl"
               freeSolo
+              sx={{
+                width: "50%",
+                height: 30,
+                m: "0 auto",
+                mb: 3,
+                dir: "rtl",
+              }}
               disableClearable
               options={products.map((option) => option.title)}
+              onInputChange={(e) => filterName(e.target.innerText)}
               renderInput={(params) => (
                 <TextField
                   {...params}
-                  label="Search input"
+                  label="חפש מוצר"
                   onChange={(e) => filterName(e.target.value)}
                   InputProps={{
                     ...params.InputProps,
-                    type: "search",
+                    startAdornment: (
+                      <InputAdornment position="end">
+                        <Image
+                          src="/search.png"
+                          width={20}
+                          height={20}
+                          alt="search"
+                        />
+                      </InputAdornment>
+                    ),
                   }}
                 />
               )}
             />
-            <ButtonGroup>
+            <div className={style.buttons}>
               <Button
-                sx={{ backgroundColor: "#76e346", color: "black", m: 0.5 }}
+                className={style.button}
+                onClick={() => categoryFetch("62d557e81237e414e6c8ca78")}
+              >
+                <Image src="/baby.png" height={50} width={50} alt="veg" />
+                <strong> תינוקות</strong>
+              </Button>
+              <Button
+                className={style.button}
+                onClick={() => categoryFetch("62d554d11237e414e6c8ca35")}
+              >
+                <Image
+                  src="/meatandfish.png"
+                  height={50}
+                  width={50}
+                  alt="veg"
+                />
+                <strong>בשר ודגים</strong>
+              </Button>
+              <Button
+                className={style.button}
+                onClick={() => categoryFetch("62d54d911237e414e6c8c99f")}
+              >
+                <Image src="/eggandmilk.png" height={50} width={50} alt="veg" />
+                <strong>ביצים וחלב</strong>
+              </Button>
+              <Button
+                className={style.button}
                 onClick={() => categoryFetch("62c176f72e626395371b107c")}
               >
-                פירות
+                <Image src="/fruit.png" height={50} width={50} alt="fruit" />
+                <strong>פירות</strong>
               </Button>
               <Button
-                sx={{ backgroundColor: "#76e346", color: "black", m: 0.5 }}
+                className={style.button}
                 onClick={() => categoryFetch("62c177162e626395371b107e")}
               >
-                ירקות
+                <Image src="/veg.png" height={50} width={50} alt="veg" />
+                <strong>ירקות</strong>
               </Button>
-            </ButtonGroup>
+            </div>
           </Stack>
           <div className={style.products}>
             {productsFilter.map((item) => (

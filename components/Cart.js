@@ -1,29 +1,20 @@
-import * as React from "react";
+import React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { useCompare } from "../context/CompareContext";
 import { Button, ButtonGroup } from "@mui/material";
+import Dialog from "./Dialog";
+import style from "../styles/SumSupers.module.css";
 
+import SumSupers from "./SumSupers";
 export default function DataTable() {
-  const {
-    supers,
-    products,
-    setProductsFilter,
-    productsFilter,
-    cartProducts,
-    setCartProducts,
-    addToCart,
-    decrement,
-  } = useCompare();
+  const { supers, cartProducts, addToCart, decrement } = useCompare();
 
   const columns = [
     {
       field: "index",
       headerName: "מספר מוצר",
-      description: "This column has a value getter and is not sortable.",
       sortable: false,
       width: 80,
-      valueGetter: (params) =>
-        `${params.row.firstName || ""} ${params.row.lastName || ""}`,
     },
     { field: "title", headerName: "שם מוצר", width: 130 },
     {
@@ -32,10 +23,7 @@ export default function DataTable() {
       renderCell: (params) => {
         return (
           <>
-            <ButtonGroup
-              variant="#76e346"
-              // aria-label="outlined primary button group"
-            >
+            <ButtonGroup variant="#76e346">
               <Button
                 sx={{ backgroundColor: "whitesmokesx" }}
                 onClick={() => addToCart(params.row)}
@@ -60,14 +48,15 @@ export default function DataTable() {
       .filter((currentSuper) => currentSuper.checked)
       .map((item) => ({
         field: item.name,
-        headerName: item.name,
+        headerName: item.nameheb,
       })),
   ];
   const supersPrices = {};
   const supersPricesSum = {};
   const rows = [
     ...cartProducts.map((row, index) => {
-      row.prices.forEach((price) => {
+      //each row of product and compare betwrrn the supers
+      row.product.prices.forEach((price) => {
         const supermarket = price.supermarket;
         const superChecked = supers.find(
           (currentSuper) =>
@@ -78,46 +67,52 @@ export default function DataTable() {
           const priceSum = price.price * row.qty;
           supersPrices[superChecked.name] = priceSum.toFixed(2);
 
-          supersPricesSum[superChecked.name] =
-            (supersPricesSum[superChecked.name] ?? 0) + priceSum;
-
-          console.log("supersPricesSum", supersPricesSum);
+          supersPricesSum[superChecked.nameheb] =
+            (supersPricesSum[superChecked.nameheb] ?? 0) + priceSum;
         }
       });
       return {
         ...row,
-        id: row._id,
+        id: row.product._id,
         index: index + 1,
-        title: row.title,
+        title: row.product.title,
         ...supersPrices,
       };
     }),
   ];
-  function Sum() {
+  //sum in the footer of the cart
+  let min = Infinity;
+  let max = 0;
+  function sum() {
     let entries = Object.entries(supersPricesSum);
     let sum = entries.map(([key, val] = entry) => {
-      return <div key={key}>{`The ${key} sum is ${val.toFixed(2)}`} </div>;
+      return (
+        <span
+          key={key}
+          className={
+            val <= min ? ((min = val), style.spanSumMin) : style.spanSum
+          }
+        >
+          {`סכום הקנייה של  ${key} הוא ${val.toFixed(2)}`}{" "}
+        </span>
+      );
     });
     return sum;
   }
 
   return (
-    <div dir="rtl" style={{ height: 400, width: "100%" }}>
+    <div dir="rtl" style={{ height: 600, width: "100%" }}>
       <DataGrid
+        // autoHeight
         rows={rows}
         columns={columns}
         pageSize={100}
-        // loading={data.rows.length === 0}
-        rowsPerPageOptions={[5]}
-        checkboxSelection
-        disableSelectionOnClick
-        components={{
-          Footer: () => Sum(),
-        }}
+        rowsPerPageOptions={[10]}
+        // checkboxSelection
+        // disableSelectionOnClick
       />
-      <Button sx={{ backgroundColor: "#76e346", color: "black", p: 2, m: 2 }}>
-        שמור עגלה
-      </Button>
+      {supers.some((v) => v.checked) && <SumSupers sum={sum} />}
+      <Dialog />
     </div>
   );
 }

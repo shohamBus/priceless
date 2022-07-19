@@ -9,7 +9,7 @@ const handler = async (req, res) => {
     const product = await Product.find({
       "category": req.headers.id,
     })
-      .populate("category", "title")
+      .populate("category")
       .populate("prices.supermarket");
     res.status(200).send(product);
     // .catch((e) => res.send("error", e));

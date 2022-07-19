@@ -17,16 +17,16 @@ const handler = async (req, res) => {
           title,
         });
 
-        app.get("/api/product/:id", (req, res) => {
-          const { id } = req.params;
-          if (id) {
-            db.findById(id)
-              .then((product) => {
-                res.send(product);
-              })
-              .catch((e) => res.send("error", e));
-          }
-        });
+        // app.get("/api/product/:id", (req, res) => {
+        //   const { id } = req.params;
+        //   if (id) {
+        //     db.findById(id)
+        //       .then((product) => {
+        //         res.send(product);
+        //       })
+        //       .catch((e) => res.send("error", e));
+        //   }
+        // });
         // Create new supermarket
         const categorycreated = await category.save();
         return res.status(200).send(categorycreated);

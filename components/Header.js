@@ -1,18 +1,10 @@
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  MenuItem,
-  Container,
-  IconButton,
-} from "@mui/material";
+import { AppBar, Toolbar, Typography, Container } from "@mui/material";
 import Image from "next/image";
-import style from "../styles/Header.module.css";
 import * as React from "react";
 import Box from "@mui/material/Box";
-import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import Session from "./login-btn";
+import DropDown from "./DropDown";
 
 const Header = () => {
   return (
@@ -51,15 +43,9 @@ const Header = () => {
                 color: "inherit",
                 textDecoration: "none",
               }}
-            >
-              <Image
-                // className={style.logo}
-                src="/logo.png"
-                height={53}
-                width={297}
-                alt="logo"
-              />
-              <Link href="/about">
+            />
+            <Image src="/logo.png" height={53} width={297} alt="logo" />
+            {/* <Link href="/about">
                 <MenuItem>
                   {" "}
                   <Typography href="#about">אודות</Typography>
@@ -77,7 +63,8 @@ const Header = () => {
               sx={{ mr: 2 }}
             >
               <MenuIcon />
-            </IconButton>
+            </IconButton> */}
+            <DropDown />
           </Box>{" "}
         </Toolbar>
       </Container>

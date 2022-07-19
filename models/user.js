@@ -1,19 +1,18 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
+import Cart from "./cart";
 
 const user = new Schema({
   name: {
     type: String,
-    required: true,
   },
   email: {
     type: String,
-    required: true,
   },
   since: {
     type: Date,
   },
-  // cart: [],
+  carts: [{ type: Schema.Types.ObjectId, ref: Cart }],
 });
 
 mongoose.models = {};

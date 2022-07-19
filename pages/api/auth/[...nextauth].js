@@ -1,6 +1,5 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import { useCallback } from "react";
 import User from "../../../models/user";
 export default NextAuth({
   // Configure one or more authentication providers
@@ -12,7 +11,6 @@ export default NextAuth({
   ],
   callbacks: {
     async signIn(user) {
-      //   await connectDBOnly();
       await User.findOneAndUpdate(
         {
           email: user.user.email,

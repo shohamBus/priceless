@@ -3,6 +3,7 @@ import Supermarket from "../../models/supermarket";
 
 const handler = async (req, res) => {
   if (req.method === "GET") {
+    //get all supermarkets
     const supermarket = await Supermarket.find();
     res
       .status(200)
