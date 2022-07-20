@@ -14,8 +14,8 @@ function Product({ product }) {
   const { addToCart } = useCompare();
   //product card
   return (
-    <div className={style.product}>
-      <Card onClick={() => addToCart(product)}>
+    <div>
+      <Card className={style.product} onClick={() => addToCart(product)}>
         <CardActionArea>
           <CardMedia>
             <Image

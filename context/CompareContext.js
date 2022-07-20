@@ -1,4 +1,5 @@
-import React, { useState, useContext } from "react";
+// import { loadComponents } from "next/dist/server/load-components";
+import React, { useState, useContext, useEffect } from "react";
 const CompareContext = React.createContext();
 // const CompareUpdateContext = React.createContext();
 
@@ -11,7 +12,15 @@ export default function ContextProvider({ children }) {
   const [productsFilter, setProductsFilter] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
   const [currentUser, setCurrentUser] = useState([]);
-  console.log("cartProducts", cartProducts);
+  const [locations, setLocations] = useState([]);
+  useEffect(() => {
+    fetch(`/api/location`, {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((res) => setLocations(res));
+  }, []);
+
   const categoryFetch = (ID) => {
     fetch(`/api/product`, {
       method: "GET",
@@ -59,7 +68,6 @@ export default function ContextProvider({ children }) {
     const found = cartProducts.find((item) => {
       return item._id === product._id || item.product._id === product._id;
     });
-    console.log("found", found);
     if (found === undefined) {
       setCartProducts([
         ...cartProducts,
@@ -114,6 +122,7 @@ export default function ContextProvider({ children }) {
         getUser,
         currentUser,
         setCurrentUser,
+        locations,
       }}
     >
       {children}

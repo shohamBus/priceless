@@ -1,7 +1,7 @@
 import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React, { useState } from "react";
 import { useCompare } from "../context/CompareContext";
-function DropDown() {
+function DropDownCart() {
   const [cart, setCart] = useState([]);
   const { currentUser, setCartProducts } = useCompare();
   const handleChange = (event) => {
@@ -31,4 +31,4 @@ function DropDown() {
   );
 }
 
-export default DropDown;
+export default DropDownCart;

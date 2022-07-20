@@ -4,7 +4,8 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Link from "next/link";
 import Session from "./login-btn";
-import DropDown from "./DropDown";
+import DropDownCart from "./DropDownCart";
+import DropDownLocation from "./DropDownLocation";
 
 const Header = () => {
   return (
@@ -64,7 +65,8 @@ const Header = () => {
             >
               <MenuIcon />
             </IconButton> */}
-            <DropDown />
+            <DropDownCart />
+            <DropDownLocation />
           </Box>{" "}
         </Toolbar>
       </Container>
