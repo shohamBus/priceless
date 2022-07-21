@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const supermarket = new Schema({
   title: String,
   url: String,
+  location: Object,
 });
 
 mongoose.models = {};

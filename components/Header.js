@@ -1,8 +1,7 @@
-import { AppBar, Toolbar, Typography, Container } from "@mui/material";
+import { AppBar, Toolbar, Typography, Container, Card } from "@mui/material";
 import Image from "next/image";
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Link from "next/link";
 import Session from "./login-btn";
 import DropDownCart from "./DropDownCart";
 import DropDownLocation from "./DropDownLocation";
@@ -16,6 +15,26 @@ const Header = () => {
         display: "flex",
       }}
     >
+      <Card
+        sx={{
+          background: "whitesmoke",
+          position: "absolute",
+          display: "flex",
+          flexDirection: "row",
+          top: 0,
+          left: 0,
+          zIndex: 1,
+        }}
+      >
+        <div>
+          <h4>:העגלות שלך </h4>
+          <DropDownCart />
+        </div>
+        <div>
+          <h4>:המיקום שלך </h4>
+          <DropDownLocation />
+        </div>
+      </Card>
       <Container
         sx={{
           maxWidth: "xl",
@@ -46,27 +65,6 @@ const Header = () => {
               }}
             />
             <Image src="/logo.png" height={53} width={297} alt="logo" />
-            {/* <Link href="/about">
-                <MenuItem>
-                  {" "}
-                  <Typography href="#about">אודות</Typography>
-                </MenuItem>
-              </Link>
-            </Typography>
-            <MenuItem>
-              <Typography href="#articles">מאמרים</Typography>
-            </MenuItem>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton> */}
-            <DropDownCart />
-            <DropDownLocation />
           </Box>{" "}
         </Toolbar>
       </Container>

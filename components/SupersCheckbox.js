@@ -7,7 +7,7 @@ import { AppBar, MenuItem, Toolbar } from "@mui/material";
 import { Container } from "react-bootstrap";
 
 export const SupersCheckbox = () => {
-  const { supers, setSupers } = useCompare();
+  const { supers, setSupers, positions } = useCompare();
   //check or not check the choosen super
   const handleChange = (obj) => {
     setSupers((prevState) => {
@@ -57,12 +57,14 @@ export const SupersCheckbox = () => {
                 onClick={(e) => handleChange(supers[0])}
               >
                 {supers[0].checked && (
-                  <Image
-                    src="/super.png"
-                    width={40}
-                    height={40}
-                    alt="rami-levi"
-                  />
+                  <div style={{ position: "absolute", zIndex: 1 }}>
+                    <Image
+                      src="/super.png"
+                      width={40}
+                      height={40}
+                      alt="rami-levi"
+                    />
+                  </div>
                 )}
 
                 <Image
@@ -71,13 +73,11 @@ export const SupersCheckbox = () => {
                   height={40}
                   alt="victory"
                 />
-                {!supers[0].checked && (
-                  <Image
-                    src="/click.png"
-                    width={20}
-                    height={20}
-                    alt="rami-levi"
-                  />
+
+                {positions.map((v) =>
+                  v.name == supers[0].name
+                    ? `המרחק ממקומך הוא: ${v.d} קמ`
+                    : null
                 )}
               </MenuItem>
               <MenuItem
@@ -85,12 +85,14 @@ export const SupersCheckbox = () => {
                 onClick={(e) => handleChange(supers[1])}
               >
                 {supers[1].checked && (
-                  <Image
-                    src="/super.png"
-                    width={40}
-                    height={40}
-                    alt="rami-levi"
-                  />
+                  <div style={{ position: "absolute", zIndex: 1 }}>
+                    <Image
+                      src="/super.png"
+                      width={40}
+                      height={40}
+                      alt="rami-levi"
+                    />
+                  </div>
                 )}
                 <Image
                   src="/shufersal.png"
@@ -98,13 +100,11 @@ export const SupersCheckbox = () => {
                   height={40}
                   alt="sufersal"
                 />
-                {!supers[1].checked && (
-                  <Image
-                    src="/click.png"
-                    width={20}
-                    height={20}
-                    alt="rami-levi"
-                  />
+
+                {positions.map((v) =>
+                  v.name == supers[1].name
+                    ? `המרחק ממקומך הוא: ${v.d} קמ`
+                    : null
                 )}
               </MenuItem>
               <MenuItem
@@ -112,12 +112,19 @@ export const SupersCheckbox = () => {
                 onClick={(e) => handleChange(supers[2])}
               >
                 {supers[2].checked && (
-                  <Image
-                    src="/super.png"
-                    width={40}
-                    height={40}
-                    alt="rami-levi"
-                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      zIndex: 1,
+                    }}
+                  >
+                    <Image
+                      src="/super.png"
+                      width={40}
+                      height={40}
+                      alt="rami-levi"
+                    />
+                  </div>
                 )}
                 <Image
                   src="/rami-levi.png"
@@ -125,13 +132,11 @@ export const SupersCheckbox = () => {
                   height={40}
                   alt="rami-levi"
                 />
-                {!supers[2].checked && (
-                  <Image
-                    src="/click.png"
-                    width={20}
-                    height={20}
-                    alt="rami-levi"
-                  />
+
+                {positions.map((v) =>
+                  v.name == supers[2].name
+                    ? `המרחק ממקומך הוא: ${v.d} קמ`
+                    : null
                 )}
               </MenuItem>
             </Box>{" "}

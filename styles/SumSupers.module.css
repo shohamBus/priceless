@@ -1,4 +1,4 @@
-.spanSum{
+.spanSumMax{
  background-color: rgb(255, 0, 0);
 border: 1px solid black;
 padding: 15px;
@@ -16,8 +16,8 @@ border-radius: 5px;
 width: 400px;
 height: 80px;
 }
-.spanSumMax{
-    background-color: #d74747;
+.spanSum{
+    background-color: rgb(255, 128, 0);;
     border: 1px solid black;
     padding: 15px;
     margin: 15px;
@@ -34,4 +34,9 @@ height: 80px;
     height: 100px;
     margin-bottom: 10px;
     
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

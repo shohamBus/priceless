@@ -1,997 +1,997 @@
 [
     {
         "city": "Yerushalayim",
-        "Latitude": "31.78",
-        "Longitude": "35.22"
+        "latitude": "31.78",
+        "longitude": "35.22"
     },
     {
         "city": "Tel aviv-yafo",
-        "Latitude": "32.07",
-        "Longitude": "34.77"
+        "latitude": "32.07",
+        "longitude": "34.77"
     },
     {
         "city": "Haifa",
-        "Latitude": "32.82",
-        "Longitude": "34.99"
+        "latitude": "32.82",
+        "longitude": "34.99"
     },
     {
         "city": "Rishon leziyyon",
-        "Latitude": "31.96",
-        "Longitude": "34.8"
+        "latitude": "31.96",
+        "longitude": "34.8"
     },
     {
         "city": "Ashdod",
-        "Latitude": "31.8",
-        "Longitude": "34.64"
+        "latitude": "31.8",
+        "longitude": "34.64"
     },
     {
         "city": "Be'er sheva",
-        "Latitude": "31.25",
-        "Longitude": "34.8"
+        "latitude": "31.25",
+        "longitude": "34.8"
     },
     {
         "city": "Petah  tiqwa",
-        "Latitude": "32.09",
-        "Longitude": "34.88"
+        "latitude": "32.09",
+        "longitude": "34.88"
     },
     {
         "city": "Netanya",
-        "Latitude": "32.33",
-        "Longitude": "34.86"
+        "latitude": "32.33",
+        "longitude": "34.86"
     },
     {
         "city": "Holon",
-        "Latitude": "32.02",
-        "Longitude": "34.76"
+        "latitude": "32.02",
+        "longitude": "34.76"
     },
     {
         "city": "Bene beraq",
-        "Latitude": "32.09",
-        "Longitude": "34.85"
+        "latitude": "32.09",
+        "longitude": "34.85"
     },
     {
         "city": "Bat yam",
-        "Latitude": "32.02",
-        "Longitude": "34.75"
+        "latitude": "32.02",
+        "longitude": "34.75"
     },
     {
         "city": "Ramat gan",
-        "Latitude": "32.08",
-        "Longitude": "34.8"
+        "latitude": "32.08",
+        "longitude": "34.8"
     },
     {
         "city": "Ashqelon",
-        "Latitude": "31.67",
-        "Longitude": "34.56"
+        "latitude": "31.67",
+        "longitude": "34.56"
     },
     {
         "city": "Reh?ovot",
-        "Latitude": "31.89",
-        "Longitude": "34.8"
+        "latitude": "31.89",
+        "longitude": "34.8"
     },
     {
         "city": "Herzeliyya",
-        "Latitude": "32.17",
-        "Longitude": "34.84"
+        "latitude": "32.17",
+        "longitude": "34.84"
     },
     {
         "city": "Kefar sava",
-        "Latitude": "32.19",
-        "Longitude": "34.91"
+        "latitude": "32.19",
+        "longitude": "34.91"
     },
     {
         "city": "H?adera",
-        "Latitude": "32.45",
-        "Longitude": "34.92"
+        "latitude": "32.45",
+        "longitude": "34.92"
     },
     {
         "city": "Ra'anana",
-        "Latitude": "32.19",
-        "Longitude": "34.88"
+        "latitude": "32.19",
+        "longitude": "34.88"
     },
     {
         "city": "Lod",
-        "Latitude": "31.96",
-        "Longitude": "34.9"
+        "latitude": "31.96",
+        "longitude": "34.9"
     },
     {
         "city": "Ramla",
-        "Latitude": "31.93",
-        "Longitude": "34.86"
+        "latitude": "31.93",
+        "longitude": "34.86"
     },
     {
         "city": "Naz?erat",
-        "Latitude": "32.71",
-        "Longitude": "35.3"
+        "latitude": "32.71",
+        "longitude": "35.3"
     },
     {
         "city": "Bet shemesh",
-        "Latitude": "31.75",
-        "Longitude": "34.98"
+        "latitude": "31.75",
+        "longitude": "34.98"
     },
     {
         "city": "Modi'in-makkabim-re'ut",
-        "Latitude": "31.9",
-        "Longitude": "35.01"
+        "latitude": "31.9",
+        "longitude": "35.01"
     },
     {
         "city": "Nahariyya",
-        "Latitude": "33.03",
-        "Longitude": "35.1"
+        "latitude": "33.03",
+        "longitude": "35.1"
     },
     {
         "city": "Qiryat atta",
-        "Latitude": "32.81",
-        "Longitude": "35.12"
+        "latitude": "32.81",
+        "longitude": "35.12"
     },
     {
         "city": "Qiryat gat",
-        "Latitude": "31.61",
-        "Longitude": "34.76"
+        "latitude": "31.61",
+        "longitude": "34.76"
     },
     {
         "city": "Giv'atayim",
-        "Latitude": "32.06",
-        "Longitude": "34.8"
+        "latitude": "32.06",
+        "longitude": "34.8"
     },
     {
         "city": "'akko",
-        "Latitude": "32.94",
-        "Longitude": "35.08"
+        "latitude": "32.94",
+        "longitude": "35.08"
     },
     {
         "city": "Elat",
-        "Latitude": "29.56",
-        "Longitude": "34.95"
+        "latitude": "29.56",
+        "longitude": "34.95"
     },
     {
         "city": "Naz?erat 'illit",
-        "Latitude": "32.72",
-        "Longitude": "35.33"
+        "latitude": "32.72",
+        "longitude": "35.33"
     },
     {
         "city": "Karmiel",
-        "Latitude": "32.93",
-        "Longitude": "35.3"
+        "latitude": "32.93",
+        "longitude": "35.3"
     },
     {
         "city": "Hod hasharon",
-        "Latitude": "32.15",
-        "Longitude": "34.89"
+        "latitude": "32.15",
+        "longitude": "34.89"
     },
     {
         "city": "Tiberias",
-        "Latitude": "32.8",
-        "Longitude": "35.53"
+        "latitude": "32.8",
+        "longitude": "35.53"
     },
     {
         "city": "Qiryat motzkin",
-        "Latitude": "32.82",
-        "Longitude": "35.06"
+        "latitude": "32.82",
+        "longitude": "35.06"
     },
     {
         "city": "Umm al-fahm",
-        "Latitude": "32.53",
-        "Longitude": "35.16"
+        "latitude": "32.53",
+        "longitude": "35.16"
     },
     {
         "city": "'afula",
-        "Latitude": "32.62",
-        "Longitude": "35.29"
+        "latitude": "32.62",
+        "longitude": "35.29"
     },
     {
         "city": "Qiryat yam",
-        "Latitude": "32.84",
-        "Longitude": "35.06"
+        "latitude": "32.84",
+        "longitude": "35.06"
     },
     {
         "city": "Qiryat bialik",
-        "Latitude": "32.83",
-        "Longitude": "35.08"
+        "latitude": "32.83",
+        "longitude": "35.08"
     },
     {
         "city": "Rosh haayin",
-        "Latitude": "32.1",
-        "Longitude": "34.94"
+        "latitude": "32.1",
+        "longitude": "34.94"
     },
     {
         "city": "Ramat hasharon",
-        "Latitude": "32.15",
-        "Longitude": "34.84"
+        "latitude": "32.15",
+        "longitude": "34.84"
     },
     {
         "city": "Dimona",
-        "Latitude": "31.07",
-        "Longitude": "35.03"
+        "latitude": "31.07",
+        "longitude": "35.03"
     },
     {
         "city": "'ir hahamisha",
-        "Latitude": "32.95",
-        "Longitude": "35.16"
+        "latitude": "32.95",
+        "longitude": "35.16"
     },
     {
         "city": "Yavne",
-        "Latitude": "31.87",
-        "Longitude": "34.74"
+        "latitude": "31.87",
+        "longitude": "34.74"
     },
     {
         "city": "Tayibe",
-        "Latitude": "32.27",
-        "Longitude": "34.99"
+        "latitude": "32.27",
+        "longitude": "34.99"
     },
     {
         "city": "Shefar'am",
-        "Latitude": "32.82",
-        "Longitude": "35.17"
+        "latitude": "32.82",
+        "longitude": "35.17"
     },
     {
         "city": "Baqa-jatt",
-        "Latitude": "32.43",
-        "Longitude": "35.05"
+        "latitude": "32.43",
+        "longitude": "35.05"
     },
     {
         "city": "Or yehuda",
-        "Latitude": "32.04",
-        "Longitude": "34.85"
+        "latitude": "32.04",
+        "longitude": "34.85"
     },
     {
         "city": "Pardes h?anna-karkur",
-        "Latitude": "32.48",
-        "Longitude": "34.98"
+        "latitude": "32.48",
+        "longitude": "34.98"
     },
     {
         "city": "Ma'ale adummim",
-        "Latitude": "31.82",
-        "Longitude": "35.35"
+        "latitude": "31.82",
+        "longitude": "35.35"
     },
     {
         "city": "Shagor",
-        "Latitude": "32.92",
-        "Longitude": "35.27"
+        "latitude": "32.92",
+        "longitude": "35.27"
     },
     {
         "city": "Nes z?iyyona",
-        "Latitude": "31.93",
-        "Longitude": "34.8"
+        "latitude": "31.93",
+        "longitude": "34.8"
     },
     {
         "city": "Z?efat",
-        "Latitude": "32.97",
-        "Longitude": "35.51"
+        "latitude": "32.97",
+        "longitude": "35.51"
     },
     {
         "city": "Yehud-newe efrayim",
-        "Latitude": "32.04",
-        "Longitude": "34.89"
+        "latitude": "32.04",
+        "longitude": "34.89"
     },
     {
         "city": "Migdal ha'emeq",
-        "Latitude": "32.68",
-        "Longitude": "35.24"
+        "latitude": "32.68",
+        "longitude": "35.24"
     },
     {
         "city": "Tamra",
-        "Latitude": "32.85",
-        "Longitude": "35.2"
+        "latitude": "32.85",
+        "longitude": "35.2"
     },
     {
         "city": "Qiryat ono",
-        "Latitude": "32.07",
-        "Longitude": "34.85"
+        "latitude": "32.07",
+        "longitude": "34.85"
     },
     {
         "city": "'arad",
-        "Latitude": "31.26",
-        "Longitude": "35.22"
+        "latitude": "31.26",
+        "longitude": "35.22"
     },
     {
         "city": "Ofaqim",
-        "Latitude": "31.32",
-        "Longitude": "34.61"
+        "latitude": "31.32",
+        "longitude": "34.61"
     },
     {
         "city": "Betar illit",
-        "Latitude": "31.7",
-        "Longitude": "35.12"
+        "latitude": "31.7",
+        "longitude": "35.12"
     },
     {
         "city": "Sakhnin",
-        "Latitude": "32.87",
-        "Longitude": "35.29"
+        "latitude": "32.87",
+        "longitude": "35.29"
     },
     {
         "city": "Netivot",
-        "Latitude": "31.43",
-        "Longitude": "34.6"
+        "latitude": "31.43",
+        "longitude": "34.6"
     },
     {
         "city": "Daliyat al karmel-'isifya",
-        "Latitude": "32.72",
-        "Longitude": "35.08"
+        "latitude": "32.72",
+        "longitude": "35.08"
     },
     {
         "city": "Qiryat shemona",
-        "Latitude": "33.21",
-        "Longitude": "35.57"
+        "latitude": "33.21",
+        "longitude": "35.57"
     },
     {
         "city": "Mevasserat ziyyon",
-        "Latitude": "31.8",
-        "Longitude": "35.15"
+        "latitude": "31.8",
+        "longitude": "35.15"
     },
     {
         "city": "Nesher",
-        "Latitude": "32.75",
-        "Longitude": "35.06"
+        "latitude": "32.75",
+        "longitude": "35.06"
     },
     {
         "city": "Ma'alot-tarshih?a",
-        "Latitude": "33.03",
-        "Longitude": "35.31"
+        "latitude": "33.03",
+        "longitude": "35.31"
     },
     {
         "city": "Sederot",
-        "Latitude": "31.53",
-        "Longitude": "34.58"
+        "latitude": "31.53",
+        "longitude": "34.58"
     },
     {
         "city": "Tire",
-        "Latitude": "32.25",
-        "Longitude": "34.96"
+        "latitude": "32.25",
+        "longitude": "34.96"
     },
     {
         "city": "Qiryat mal'akhi",
-        "Latitude": "31.74",
-        "Longitude": "34.74"
+        "latitude": "31.74",
+        "longitude": "34.74"
     },
     {
         "city": "Tirat karmel",
-        "Latitude": "32.75",
-        "Longitude": "34.99"
+        "latitude": "32.75",
+        "longitude": "34.99"
     },
     {
         "city": "'arrabe",
-        "Latitude": "32.85",
-        "Longitude": "35.33"
+        "latitude": "32.85",
+        "longitude": "35.33"
     },
     {
         "city": "Mugar",
-        "Latitude": "32.89",
-        "Longitude": "35.41"
+        "latitude": "32.89",
+        "longitude": "35.41"
     },
     {
         "city": "Yoqne'am illit",
-        "Latitude": "32.67",
-        "Longitude": "35.13"
+        "latitude": "32.67",
+        "longitude": "35.13"
     },
     {
         "city": "Judeide-maker",
-        "Latitude": "32.92",
-        "Longitude": "35.15"
+        "latitude": "32.92",
+        "longitude": "35.15"
     },
     {
         "city": "Shoham",
-        "Latitude": "32",
-        "Longitude": "34.96"
+        "latitude": "32",
+        "longitude": "34.96"
     },
     {
         "city": "Giv'at shemuel",
-        "Latitude": "32.07",
-        "Longitude": "34.85"
+        "latitude": "32.07",
+        "longitude": "34.85"
     },
     {
         "city": "Ari'el",
-        "Latitude": "32.1",
-        "Longitude": "35.17"
+        "latitude": "32.1",
+        "longitude": "35.17"
     },
     {
         "city": "Kafar kanna",
-        "Latitude": "32.75",
-        "Longitude": "35.35"
+        "latitude": "32.75",
+        "longitude": "35.35"
     },
     {
         "city": "Kafar qasem",
-        "Latitude": "32.12",
-        "Longitude": "34.98"
+        "latitude": "32.12",
+        "longitude": "34.98"
     },
     {
         "city": "Qalansawe",
-        "Latitude": "32.29",
-        "Longitude": "34.98"
+        "latitude": "32.29",
+        "longitude": "34.98"
     },
     {
         "city": "Bet she'an",
-        "Latitude": "32.51",
-        "Longitude": "35.51"
+        "latitude": "32.51",
+        "longitude": "35.51"
     },
     {
         "city": "Or 'aqiva",
-        "Latitude": "32.52",
-        "Longitude": "34.91"
+        "latitude": "32.52",
+        "longitude": "34.91"
     },
     {
         "city": "Z?oran-qadima",
-        "Latitude": "32.29",
-        "Longitude": "34.91"
+        "latitude": "32.29",
+        "longitude": "34.91"
     },
     {
         "city": "Zikhron ya'aqov",
-        "Latitude": "32.58",
-        "Longitude": "34.95"
+        "latitude": "32.58",
+        "longitude": "34.95"
     },
     {
         "city": "Reine",
-        "Latitude": "32.72",
-        "Longitude": "35.3"
+        "latitude": "32.72",
+        "longitude": "35.3"
     },
     {
         "city": "'ar'ara",
-        "Latitude": "32.49",
-        "Longitude": "35.1"
+        "latitude": "32.49",
+        "longitude": "35.1"
     },
     {
         "city": "Kafar manda",
-        "Latitude": "32.82",
-        "Longitude": "35.25"
+        "latitude": "32.82",
+        "longitude": "35.25"
     },
     {
         "city": "Kafar qara'",
-        "Latitude": "32.5",
-        "Longitude": "35.05"
+        "latitude": "32.5",
+        "longitude": "35.05"
     },
     {
         "city": "Qiryat tiv'on",
-        "Latitude": "32.73",
-        "Longitude": "35.13"
+        "latitude": "32.73",
+        "longitude": "35.13"
     },
     {
         "city": "Gan yavne",
-        "Latitude": "31.79",
-        "Longitude": "34.71"
+        "latitude": "31.79",
+        "longitude": "34.71"
     },
     {
         "city": "Gedera",
-        "Latitude": "31.82",
-        "Longitude": "34.78"
+        "latitude": "31.82",
+        "longitude": "34.78"
     },
     {
         "city": "Ganne tiqwa",
-        "Latitude": "32.05",
-        "Longitude": "34.87"
+        "latitude": "32.05",
+        "longitude": "34.87"
     },
     {
         "city": "Kefar yona",
-        "Latitude": "32.32",
-        "Longitude": "34.93"
+        "latitude": "32.32",
+        "longitude": "34.93"
     },
     {
         "city": "Giv'at ze'ev",
-        "Latitude": "31.87",
-        "Longitude": "35.17"
+        "latitude": "31.87",
+        "longitude": "35.17"
     },
     {
         "city": "Iksal",
-        "Latitude": "32.68",
-        "Longitude": "35.32"
+        "latitude": "32.68",
+        "longitude": "35.32"
     },
     {
         "city": "Tur'an",
-        "Latitude": "32.77",
-        "Longitude": "35.37"
+        "latitude": "32.77",
+        "longitude": "35.37"
     },
     {
         "city": "Jisr az-zarqa",
-        "Latitude": "32.54",
-        "Longitude": "34.91"
+        "latitude": "32.54",
+        "longitude": "34.91"
     },
     {
         "city": "'ein mahel",
-        "Latitude": "32.72",
-        "Longitude": "35.35"
+        "latitude": "32.72",
+        "longitude": "35.35"
     },
     {
         "city": "I'billin",
-        "Latitude": "32.82",
-        "Longitude": "35.18"
+        "latitude": "32.82",
+        "longitude": "35.18"
     },
     {
         "city": "Azur",
-        "Latitude": "32.02",
-        "Longitude": "34.8"
+        "latitude": "32.02",
+        "longitude": "34.8"
     },
     {
         "city": "Qiryat 'eqron",
-        "Latitude": "31.85",
-        "Longitude": "34.82"
+        "latitude": "31.85",
+        "longitude": "34.82"
     },
     {
         "city": "Nahef",
-        "Latitude": "32.94",
-        "Longitude": "35.33"
+        "latitude": "32.94",
+        "longitude": "35.33"
     },
     {
         "city": "Beit jann",
-        "Latitude": "32.97",
-        "Longitude": "35.38"
+        "latitude": "32.97",
+        "longitude": "35.38"
     },
     {
         "city": "Fureidis",
-        "Latitude": "32.6",
-        "Longitude": "34.95"
+        "latitude": "32.6",
+        "longitude": "34.95"
     },
     {
         "city": "Binyamina-giv'at ada",
-        "Latitude": "32.53",
-        "Longitude": "43.95"
+        "latitude": "32.53",
+        "longitude": "43.95"
     },
     {
         "city": "Be'er ya'aqov",
-        "Latitude": "31.93",
-        "Longitude": "34.83"
+        "latitude": "31.93",
+        "longitude": "34.83"
     },
     {
         "city": "Kabul",
-        "Latitude": "32.87",
-        "Longitude": "35.22"
+        "latitude": "32.87",
+        "longitude": "35.22"
     },
     {
         "city": "Even yehuda",
-        "Latitude": "32.29",
-        "Longitude": "34.88"
+        "latitude": "32.29",
+        "longitude": "34.88"
     },
     {
         "city": "Yeroham",
-        "Latitude": "31",
-        "Longitude": "34.91"
+        "latitude": "31",
+        "longitude": "34.91"
     },
     {
         "city": "Kuseife",
-        "Latitude": "31.25",
-        "Longitude": "35.07"
+        "latitude": "31.25",
+        "longitude": "35.07"
     },
     {
         "city": "Majdal shams",
-        "Latitude": "",
-        "Longitude": ""
+        "latitude": "",
+        "longitude": ""
     },
     {
         "city": "Hura",
-        "Latitude": "",
-        "Longitude": ""
+        "latitude": "",
+        "longitude": ""
     },
     {
         "city": "Haz?or hagelilit",
-        "Latitude": "33",
-        "Longitude": "35.55"
+        "latitude": "33",
+        "longitude": "35.55"
     },
     {
         "city": "Deir hanna",
-        "Latitude": "32.87",
-        "Longitude": "35.36"
+        "latitude": "32.87",
+        "longitude": "35.36"
     },
     {
         "city": "Kafar yasif",
-        "Latitude": "32.98",
-        "Longitude": "35.18"
+        "latitude": "32.98",
+        "longitude": "35.18"
     },
     {
         "city": "Tel mond",
-        "Latitude": "32.25",
-        "Longitude": "34.93"
+        "latitude": "32.25",
+        "longitude": "34.93"
     },
     {
         "city": "Rekhasim",
-        "Latitude": "32.75",
-        "Longitude": "35.1"
+        "latitude": "32.75",
+        "longitude": "35.1"
     },
     {
         "city": "Dabburiyya",
-        "Latitude": "32.7",
-        "Longitude": "35.4"
+        "latitude": "32.7",
+        "longitude": "35.4"
     },
     {
         "city": "Bene ayish",
-        "Latitude": "31.78",
-        "Longitude": "34.75"
+        "latitude": "31.78",
+        "longitude": "34.75"
     },
     {
         "city": "Mazkeret batya",
-        "Latitude": "31.85",
-        "Longitude": "34.83"
+        "latitude": "31.85",
+        "longitude": "34.83"
     },
     {
         "city": "Bu'eine-nujeidat",
-        "Latitude": "32.8",
-        "Longitude": "35.37"
+        "latitude": "32.8",
+        "longitude": "35.37"
     },
     {
         "city": "Rame",
-        "Latitude": "32.94",
-        "Longitude": "35.41"
+        "latitude": "32.94",
+        "longitude": "35.41"
     },
     {
         "city": "Jaljulye",
-        "Latitude": "32.15",
-        "Longitude": "34.95"
+        "latitude": "32.15",
+        "longitude": "34.95"
     },
     {
         "city": "Efrata",
-        "Latitude": "31.65",
-        "Longitude": "35.13"
+        "latitude": "31.65",
+        "longitude": "35.13"
     },
     {
         "city": "Bir el-maksur",
-        "Latitude": "32.75",
-        "Longitude": "35.23"
+        "latitude": "32.75",
+        "longitude": "35.23"
     },
     {
         "city": "Qiryat arba",
-        "Latitude": "31.53",
-        "Longitude": "35.1"
+        "latitude": "31.53",
+        "longitude": "35.1"
     },
     {
         "city": "Mashhed",
-        "Latitude": "32.74",
-        "Longitude": "35.33"
+        "latitude": "32.74",
+        "longitude": "35.33"
     },
     {
         "city": "Qarne shomeron",
-        "Latitude": "32.17",
-        "Longitude": "35.08"
+        "latitude": "32.17",
+        "longitude": "35.08"
     },
     {
         "city": "'ilut",
-        "Latitude": "32.72",
-        "Longitude": "35.25"
+        "latitude": "32.72",
+        "longitude": "35.25"
     },
     {
         "city": "Kisra-sumei",
-        "Latitude": "32.97",
-        "Longitude": "35.3"
+        "latitude": "32.97",
+        "longitude": "35.3"
     },
     {
         "city": "Pardesiyya",
-        "Latitude": "32.3",
-        "Longitude": "34.92"
+        "latitude": "32.3",
+        "longitude": "34.92"
     },
     {
         "city": "Basmat tab'un",
-        "Latitude": "32.74",
-        "Longitude": "35.15"
+        "latitude": "32.74",
+        "longitude": "35.15"
     },
     {
         "city": "Zarzir",
-        "Latitude": "",
-        "Longitude": ""
+        "latitude": "",
+        "longitude": ""
     },
     {
         "city": "'omer",
-        "Latitude": "31.29",
-        "Longitude": "34.85"
+        "latitude": "31.29",
+        "longitude": "34.85"
     },
     {
         "city": "Sha'ab",
-        "Latitude": "32.89",
-        "Longitude": "35.24"
+        "latitude": "32.89",
+        "longitude": "35.24"
     },
     {
         "city": "Segev-shalom",
-        "Latitude": "32.86",
-        "Longitude": "35.26"
+        "latitude": "32.86",
+        "longitude": "35.26"
     },
     {
         "city": "Oranit",
-        "Latitude": "32.13",
-        "Longitude": "34.98"
+        "latitude": "32.13",
+        "longitude": "34.98"
     },
     {
         "city": "Ramat yishay",
-        "Latitude": "32.7",
-        "Longitude": "35.18"
+        "latitude": "32.7",
+        "longitude": "35.18"
     },
     {
         "city": "Bet dagan",
-        "Latitude": "32",
-        "Longitude": "34.83"
+        "latitude": "32",
+        "longitude": "34.83"
     },
     {
         "city": "Abu ghosh",
-        "Latitude": "31.8",
-        "Longitude": "35.1"
+        "latitude": "31.8",
+        "longitude": "35.1"
     },
     {
         "city": "Shelomi",
-        "Latitude": "33.07",
-        "Longitude": "35.1"
+        "latitude": "33.07",
+        "longitude": "35.1"
     },
     {
         "city": "Kefar weradim",
-        "Latitude": "32.99",
-        "Longitude": "35.28"
+        "latitude": "32.99",
+        "longitude": "35.28"
     },
     {
         "city": "Alfe menashe",
-        "Latitude": "32.17",
-        "Longitude": "35"
+        "latitude": "32.17",
+        "longitude": "35"
     },
     {
         "city": "Hurfeish",
-        "Latitude": "33.02",
-        "Longitude": "35.35"
+        "latitude": "33.02",
+        "longitude": "35.35"
     },
     {
         "city": "Tuba-zangariyye",
-        "Latitude": "32.97",
-        "Longitude": "35.6"
+        "latitude": "32.97",
+        "longitude": "35.6"
     },
     {
         "city": "Peqi'in",
-        "Latitude": "32.98",
-        "Longitude": "35.34"
+        "latitude": "32.98",
+        "longitude": "35.34"
     },
     {
         "city": "Bet el",
-        "Latitude": "31.93",
-        "Longitude": "35.22"
+        "latitude": "31.93",
+        "longitude": "35.22"
     },
     {
         "city": "Shibli-umm al-ghanam",
-        "Latitude": "",
-        "Longitude": ""
+        "latitude": "",
+        "longitude": ""
     },
     {
         "city": "Mizpe ramon",
-        "Latitude": "30.61",
-        "Longitude": "34.8"
+        "latitude": "30.61",
+        "longitude": "34.8"
     },
     {
         "city": "'atlit",
-        "Latitude": "32.68",
-        "Longitude": "34.93"
+        "latitude": "32.68",
+        "longitude": "34.93"
     },
     {
         "city": "Kefar habad",
-        "Latitude": "31.99",
-        "Longitude": "34.85"
+        "latitude": "31.99",
+        "longitude": "34.85"
     },
     {
         "city": "'eilabun",
-        "Latitude": "32.83",
-        "Longitude": "35.4"
+        "latitude": "32.83",
+        "longitude": "35.4"
     },
     {
         "city": "Qesarya",
-        "Latitude": "32.48",
-        "Longitude": "34.88"
+        "latitude": "32.48",
+        "longitude": "34.88"
     },
     {
         "city": "Kokhav ya'aqov",
-        "Latitude": "31.88",
-        "Longitude": "35.23"
+        "latitude": "31.88",
+        "longitude": "35.23"
     },
     {
         "city": "Sha'are tiqwa",
-        "Latitude": "32.12",
-        "Longitude": "35.02"
+        "latitude": "32.12",
+        "longitude": "35.02"
     },
     {
         "city": "Ka'abiyye-tabbash-hajaj",
-        "Latitude": "",
-        "Longitude": ""
+        "latitude": "",
+        "longitude": ""
     },
     {
         "city": "Sajur",
-        "Latitude": "32.95",
-        "Longitude": "35.34"
+        "latitude": "32.95",
+        "longitude": "35.34"
     },
     {
         "city": "Z?ur hadassa",
-        "Latitude": "31.72",
-        "Longitude": "35.1"
+        "latitude": "31.72",
+        "longitude": "35.1"
     },
     {
         "city": "Mazra'a",
-        "Latitude": "32.99",
-        "Longitude": "35.1"
+        "latitude": "32.99",
+        "longitude": "35.1"
     },
     {
         "city": "Elqana",
-        "Latitude": "32.1",
-        "Longitude": "35.03"
+        "latitude": "32.1",
+        "longitude": "35.03"
     },
     {
         "city": "Allon shevut",
-        "Latitude": "31.67",
-        "Longitude": "35.12"
+        "latitude": "31.67",
+        "longitude": "35.12"
     },
     {
         "city": "Savyon",
-        "Latitude": "32.05",
-        "Longitude": "34.88"
+        "latitude": "32.05",
+        "longitude": "34.88"
     },
     {
         "city": "Qiryat ye'arim",
-        "Latitude": "31.82",
-        "Longitude": "35.1"
+        "latitude": "31.82",
+        "longitude": "35.1"
     },
     {
         "city": "Qedummim",
-        "Latitude": "32.2",
-        "Longitude": "35.15"
+        "latitude": "32.2",
+        "longitude": "35.15"
     },
     {
         "city": "Muqeible",
-        "Latitude": "32.52",
-        "Longitude": "35.29"
+        "latitude": "32.52",
+        "longitude": "35.29"
     },
     {
         "city": "Fassuta",
-        "Latitude": "33.05",
-        "Longitude": "35.31"
+        "latitude": "33.05",
+        "longitude": "35.31"
     },
     {
         "city": "Kafar kama",
-        "Latitude": "32.72",
-        "Longitude": "35.44"
+        "latitude": "32.72",
+        "longitude": "35.44"
     },
     {
         "city": "Merkaz shappira",
-        "Latitude": "30.61",
-        "Longitude": "35.19"
+        "latitude": "30.61",
+        "longitude": "35.19"
     },
     {
         "city": "Ramat ef'al",
-        "Latitude": "32.05",
-        "Longitude": "34.83"
+        "latitude": "32.05",
+        "longitude": "34.83"
     },
     {
         "city": "Yavne'el",
-        "Latitude": "32.71",
-        "Longitude": "35.5"
+        "latitude": "32.71",
+        "longitude": "35.5"
     },
     {
         "city": "Mi'elya",
-        "Latitude": "33.03",
-        "Longitude": "35.26"
+        "latitude": "33.03",
+        "longitude": "35.26"
     },
     {
         "city": "Jish",
-        "Latitude": "33.02",
-        "Longitude": "35.44"
+        "latitude": "33.02",
+        "longitude": "35.44"
     },
     {
         "city": "Elyakhin",
-        "Latitude": "32.4",
-        "Longitude": "34.92"
+        "latitude": "32.4",
+        "longitude": "34.92"
     },
     {
         "city": "Newe deqalim",
-        "Latitude": "31.35",
-        "Longitude": "34.27"
+        "latitude": "31.35",
+        "longitude": "34.27"
     },
     {
         "city": "Kaokab abu al-hija",
-        "Latitude": "",
-        "Longitude": ""
+        "latitude": "",
+        "longitude": ""
     },
     {
         "city": "Bet arye",
-        "Latitude": "32.03",
-        "Longitude": "35.05"
+        "latitude": "32.03",
+        "longitude": "35.05"
     },
     {
         "city": "'immanu'el",
-        "Latitude": "32.15",
-        "Longitude": "35.13"
+        "latitude": "32.15",
+        "longitude": "35.13"
     },
     {
         "city": "Uzeir",
-        "Latitude": "32.79",
-        "Longitude": "35.33"
+        "latitude": "32.79",
+        "longitude": "35.33"
     },
     {
         "city": "Rosh pinna",
-        "Latitude": "32.97",
-        "Longitude": "35.53"
+        "latitude": "32.97",
+        "longitude": "35.53"
     },
     {
         "city": "Sulam",
-        "Latitude": "32.61",
-        "Longitude": "35.33"
+        "latitude": "32.61",
+        "longitude": "35.33"
     },
     {
         "city": "Sheikh dannun",
-        "Latitude": "32.99",
-        "Longitude": "35.15"
+        "latitude": "32.99",
+        "longitude": "35.15"
     },
     {
         "city": "'ofra",
-        "Latitude": "31.92",
-        "Longitude": "35.23"
+        "latitude": "31.92",
+        "longitude": "35.23"
     },
     {
         "city": "Kefar tavor",
-        "Latitude": "32.69",
-        "Longitude": "35.42"
+        "latitude": "32.69",
+        "longitude": "35.42"
     },
     {
         "city": "Nordiyya",
-        "Latitude": "32.32",
-        "Longitude": "34.9"
+        "latitude": "32.32",
+        "longitude": "34.9"
     },
     {
         "city": "Eli",
-        "Latitude": "32.07",
-        "Longitude": "35.27"
+        "latitude": "32.07",
+        "longitude": "35.27"
     },
     {
         "city": "Nehalim",
-        "Latitude": "32.06",
-        "Longitude": "34.91"
+        "latitude": "32.06",
+        "longitude": "34.91"
     },
     {
         "city": "Ibtin",
-        "Latitude": "32.76",
-        "Longitude": "35.1"
+        "latitude": "32.76",
+        "longitude": "35.1"
     },
     {
         "city": "Kefar adummim",
-        "Latitude": "31.82",
-        "Longitude": "35.33"
+        "latitude": "31.82",
+        "longitude": "35.33"
     },
     {
         "city": "'ein qiniyye",
-        "Latitude": "31.93",
-        "Longitude": "35.15"
+        "latitude": "31.93",
+        "longitude": "35.15"
     },
     {
         "city": "Shilo",
-        "Latitude": "32.05",
-        "Longitude": "35.28"
+        "latitude": "32.05",
+        "longitude": "35.28"
     },
     {
         "city": "Har adar",
-        "Latitude": "31.82",
-        "Longitude": "35.13"
+        "latitude": "31.82",
+        "longitude": "35.13"
     },
     {
         "city": "Timrat",
-        "Latitude": "32.7",
-        "Longitude": "35.23"
+        "latitude": "32.7",
+        "longitude": "35.23"
     },
     {
         "city": "Sallama",
-        "Latitude": "32.9",
-        "Longitude": "35.37"
+        "latitude": "32.9",
+        "longitude": "35.37"
     },
     {
         "city": "Kefar shemaryahu",
-        "Latitude": "32.19",
-        "Longitude": "34.82"
+        "latitude": "32.19",
+        "longitude": "34.82"
     },
     {
         "city": "Talmon",
-        "Latitude": "31.93",
-        "Longitude": "35.12"
+        "latitude": "31.93",
+        "longitude": "35.12"
     },
     {
         "city": "Bet yizhaq",
-        "Latitude": "32.32",
-        "Longitude": "34.88"
+        "latitude": "32.32",
+        "longitude": "34.88"
     },
     {
         "city": "Nein",
-        "Latitude": "32.63",
-        "Longitude": "35.35"
+        "latitude": "32.63",
+        "longitude": "35.35"
     },
     {
         "city": "Na'ura",
-        "Latitude": "32.61",
-        "Longitude": "35.39"
+        "latitude": "32.61",
+        "longitude": "35.39"
     },
     {
         "city": "Rumat heib",
-        "Latitude": "32.78",
-        "Longitude": "35.31"
+        "latitude": "32.78",
+        "longitude": "35.31"
     }
 ]

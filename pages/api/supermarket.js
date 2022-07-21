@@ -11,12 +11,13 @@ const handler = async (req, res) => {
       .catch((e) => res.send("error", e));
   } else if (req.method === "POST") {
     // Check if title and url is provided
-    const { title, url } = req.body;
-    if (title && url) {
+    const { title, url, location } = req.body;
+    if (title && url && location) {
       try {
         const supermarket = new Supermarket({
           title,
           url,
+          location,
         });
 
         // Create new supermarket

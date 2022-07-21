@@ -7,7 +7,8 @@ import style from "../styles/SumSupers.module.css";
 
 import SumSupers from "./SumSupers";
 export default function DataTable() {
-  const { supers, cartProducts, addToCart, decrement } = useCompare();
+  const { supers, cartProducts, setCartProducts, addToCart, decrement } =
+    useCompare();
 
   const columns = [
     {
@@ -90,7 +91,11 @@ export default function DataTable() {
         <span
           key={key}
           className={
-            val <= min ? ((min = val), style.spanSumMin) : style.spanSum
+            val <= min
+              ? ((min = val), style.spanSumMin)
+              : val >= max
+              ? ((max = val), style.spanSumMax)
+              : style.spanSum
           }
         >
           {`סכום הקנייה של  ${key} הוא ${val.toFixed(2)}`}{" "}
@@ -112,7 +117,16 @@ export default function DataTable() {
         // disableSelectionOnClick
       />
       {supers.some((v) => v.checked) && <SumSupers sum={sum} />}
-      <Dialog />
+      <div className={style.buttons}>
+        <Dialog />
+        <Button
+          sx={{ backgroundColor: "#76e346", color: "black", p: 2, m: 2 }}
+          onClick={() => setCartProducts([])}
+        >
+          {" "}
+          נקה עגלה
+        </Button>
+      </div>
     </div>
   );
 }

@@ -12,13 +12,21 @@ export default function ContextProvider({ children }) {
   const [productsFilter, setProductsFilter] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
   const [currentUser, setCurrentUser] = useState([]);
+  const [supersLocations, setSupersLocations] = useState([]);
   const [locations, setLocations] = useState([]);
+  const [positions, setPositions] = useState([]);
   useEffect(() => {
     fetch(`/api/location`, {
       method: "GET",
     })
       .then((res) => res.json())
       .then((res) => setLocations(res));
+
+    fetch(`/api/supermarket`, {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((res) => setSupersLocations(res));
   }, []);
 
   const categoryFetch = (ID) => {
@@ -56,7 +64,7 @@ export default function ContextProvider({ children }) {
       checked: false,
     },
     {
-      name: "rami_levi",
+      name: "rami-levi",
       nameheb: "רמי לוי",
       _id: "62c16fc87033075c47fdd722",
       checked: false,
@@ -123,6 +131,9 @@ export default function ContextProvider({ children }) {
         currentUser,
         setCurrentUser,
         locations,
+        supersLocations,
+        positions,
+        setPositions,
       }}
     >
       {children}

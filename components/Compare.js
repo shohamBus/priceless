@@ -24,10 +24,10 @@ export const Compare = () => {
   return (
     <>
       <div className={style.container}>
-        <div className={style.main}>
+        <div className={style.cart}>
           <Cart />
         </div>
-        <div className={style.main}>
+        <div className={style.comp}>
           <Stack dir="rtl" spacing={2}>
             <Autocomplete
               freeSolo
