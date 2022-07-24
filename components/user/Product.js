@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import Card from "@mui/material/Card";
-import style from "../styles/Product.module.css";
+import style from "../../styles/Product.module.css";
 import {
   CardActionArea,
   CardContent,
   CardMedia,
   Typography,
 } from "@mui/material";
-import { useCompare } from "../context/CompareContext";
+import { useCompare } from "../../context/CompareContext";
 
 function Product({ product }) {
   const { addToCart } = useCompare();

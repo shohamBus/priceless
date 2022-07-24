@@ -1,6 +1,6 @@
 import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React, { useState } from "react";
-import { useCompare } from "../context/CompareContext";
+import { useCompare } from "../../context/CompareContext";
 function DropDownCart() {
   const [cart, setCart] = useState([]);
   const { currentUser, setCartProducts } = useCompare();

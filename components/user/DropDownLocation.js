@@ -6,7 +6,7 @@ import {
   TextField,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { useCompare } from "../context/CompareContext";
+import { useCompare } from "../../context/CompareContext";
 function DropDownLocation() {
   const { locations, supersLocations, positions, setPositions } = useCompare();
   const [locationDisplay, setLocationDisplay] = useState([]);
@@ -28,13 +28,11 @@ function DropDownLocation() {
           .then(distance());
       });
     } else {
-      console.log("Geolocation is not supported by this browser.");
     }
   }, [supersLocations]);
 
   //calculate the distance from the current location to the supers
   const distance = () => {
-    console.log("supersLocations", supersLocations);
     let pos = [];
     supersLocations.map((v) => {
       let name = v.title;
@@ -42,7 +40,6 @@ function DropDownLocation() {
       let lon1 = locationDisplay.longitude;
       let lat2 = v.location.latitude;
       let lon2 = v.location.longitude;
-      console.log("lon2", lon2);
 
       var R = 6371; // Radius of the earth in km
       var dLat = deg2rad(lat2 - lat1); // deg2rad below

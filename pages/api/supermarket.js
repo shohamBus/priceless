@@ -5,10 +5,8 @@ const handler = async (req, res) => {
   if (req.method === "GET") {
     //get all supermarkets
     const supermarket = await Supermarket.find();
-    res
-      .status(200)
-      .send(supermarket)
-      .catch((e) => res.send("error", e));
+    res.status(200).send(supermarket);
+    // .catch((e) => res.send("error", e));
   } else if (req.method === "POST") {
     // Check if title and url is provided
     const { title, url, location } = req.body;

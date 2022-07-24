@@ -1,5 +1,5 @@
 import Product from "./Product";
-import style from "../styles/Compare.module.css";
+import style from "../../styles/Compare.module.css";
 import {
   Autocomplete,
   Stack,
@@ -7,7 +7,7 @@ import {
   Button,
   InputAdornment,
 } from "@mui/material";
-import { useCompare } from "../context/CompareContext";
+import { useCompare } from "../../context/CompareContext";
 import Cart from "./Cart";
 import Image from "next/image";
 

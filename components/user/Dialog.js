@@ -6,7 +6,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import { Input } from "@mui/material";
 import { useSession } from "next-auth/react";
-import { useCompare } from "../context/CompareContext";
+import { useCompare } from "../../context/CompareContext";
 import axios from "axios";
 
 export default function AlertDialog() {

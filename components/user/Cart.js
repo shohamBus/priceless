@@ -1,9 +1,9 @@
 import React from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import { useCompare } from "../context/CompareContext";
+import { useCompare } from "../../context/CompareContext";
 import { Button, ButtonGroup } from "@mui/material";
 import Dialog from "./Dialog";
-import style from "../styles/SumSupers.module.css";
+import style from "../../styles/SumSupers.module.css";
 
 import SumSupers from "./SumSupers";
 export default function DataTable() {

@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
-const { DB_USER, DB_PASS, CLIENT_ID, CLIENT_SECRET } = process.env;
+const { DB_USER, DB_PASS, CLIENT_ID, CLIENT_SECRET, NEXT_PUBLIC_ADMIN_EMAIL } =
+  process.env;
 
 const nextConfig = {
   reactStrictMode: true,
@@ -8,6 +9,7 @@ const nextConfig = {
     DB_PASS,
     CLIENT_ID,
     CLIENT_SECRET,
+    NEXT_PUBLIC_ADMIN_EMAIL,
   },
 };
 

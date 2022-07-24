@@ -1,8 +1,8 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Image from "next/image";
-import styles from "../styles/SupersCheckbox.module.css";
-import { useCompare } from "../context/CompareContext";
+import styles from "../../styles/SupersCheckbox.module.css";
+import { useCompare } from "../../context/CompareContext";
 import { AppBar, MenuItem, Toolbar } from "@mui/material";
 import { Container } from "react-bootstrap";
 

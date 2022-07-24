@@ -1,8 +1,8 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import Header from "../components/Header";
-import { SupersCheckbox } from "../components/SupersCheckbox";
-import { Compare } from "../components/Compare";
+import Header from "../components/user/Header";
+import { SupersCheckbox } from "../components/user/SupersCheckbox";
+import { Compare } from "../components/user/Compare";
 
 export default function Home() {
   return (
