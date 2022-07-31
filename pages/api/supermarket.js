@@ -7,14 +7,22 @@ const handler = async (req, res) => {
     const supermarket = await Supermarket.find();
     res.status(200).send(supermarket);
     // .catch((e) => res.send("error", e));
+  } else if (req.method === "DELETE") {
+    const supermarketId = JSON.parse(req.body);
+    await Supermarket.findByIdAndDelete(supermarketId);
+    res.status(200);
   } else if (req.method === "POST") {
     // Check if title and url is provided
-    const { title, url, location } = req.body;
-    if (title && url && location) {
+    const { title, titleheb, url } =
+      // location
+      JSON.parse(req.body);
+    if (title && url) {
       try {
         const supermarket = new Supermarket({
           title,
+          titleheb,
           url,
+          img,
           location,
         });
 

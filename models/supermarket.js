@@ -3,7 +3,9 @@ const Schema = mongoose.Schema;
 
 const supermarket = new Schema({
   title: String,
+  titleheb: String,
   url: String,
+  img: String,
   location: Object,
 });
 

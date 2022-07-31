@@ -12,15 +12,20 @@ import Cart from "./Cart";
 import Image from "next/image";
 
 export const Compare = () => {
-  const { products, setProductsFilter, productsFilter, categoryFetch } =
-    useCompare();
+  const {
+    products,
+    setProductsFilter,
+    productsFilter,
+    categories,
+    categoryFetch,
+  } = useCompare();
   //   filter by name
   const filterName = (inp) => {
     setProductsFilter(
       products.filter((product) => product.title.includes(inp))
     );
   };
-
+  console.log("categories", categories);
   return (
     <>
       <div className={style.container}>
@@ -63,7 +68,24 @@ export const Compare = () => {
               )}
             />
             <div className={style.buttons}>
-              <Button
+              {categories.map((category) => {
+                return (
+                  <Button
+                    key={category._id}
+                    className={style.button}
+                    onClick={() => categoryFetch(category._id)}
+                  >
+                    <Image
+                      src={category.img}
+                      height={50}
+                      width={50}
+                      alt="veg"
+                    />
+                    <strong> {category.titleheb}</strong>
+                  </Button>
+                );
+              })}
+              {/* <Button
                 className={style.button}
                 onClick={() => categoryFetch("62d557e81237e414e6c8ca78")}
               >
@@ -102,7 +124,7 @@ export const Compare = () => {
               >
                 <Image src="/veg.png" height={50} width={50} alt="veg" />
                 <strong>ירקות</strong>
-              </Button>
+              </Button> */}
             </div>
           </Stack>
           <div className={style.products}>

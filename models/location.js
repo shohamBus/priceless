@@ -2,9 +2,9 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const location = new Schema({
-  name: String,
-  Latitude: Number,
-  Longitude: Number,
+  city: String,
+  latitude: Number,
+  longitude: Number,
 });
 mongoose.models = {};
 

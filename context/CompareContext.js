@@ -14,6 +14,7 @@ export default function ContextProvider({ children }) {
   const [currentUser, setCurrentUser] = useState([]);
   const [supersLocations, setSupersLocations] = useState([]);
   const [locations, setLocations] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [positions, setPositions] = useState([]);
   useEffect(() => {
     fetch(`/api/location`, {
@@ -27,12 +28,17 @@ export default function ContextProvider({ children }) {
     })
       .then((res) => res.json())
       .then((res) => setSupersLocations(res));
+    fetch(`/api/category`, {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((res) => setCategories(res));
   }, []);
-
+  console.log("supersLocations", supersLocations);
   const categoryFetch = (ID) => {
     fetch(`/api/product`, {
       method: "GET",
-      headers: { id: ID },
+      headers: { id: ID, filter: 1 },
     })
       .then((res) => res.json())
       .then((res) => {
@@ -72,7 +78,6 @@ export default function ContextProvider({ children }) {
   ]);
   // Add to cart
   const addToCart = (product) => {
-    console.log("product", product);
     const found = cartProducts.find((item) => {
       return item._id === product._id || item.product._id === product._id;
     });
@@ -134,6 +139,7 @@ export default function ContextProvider({ children }) {
         supersLocations,
         positions,
         setPositions,
+        categories,
       }}
     >
       {children}

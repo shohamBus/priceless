@@ -3,6 +3,8 @@ const Schema = mongoose.Schema;
 
 const category = new Schema({
   title: String,
+  titleheb: String,
+  img: String,
 });
 mongoose.models = {};
 

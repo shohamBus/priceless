@@ -11,7 +11,6 @@ const getData = (setAllProducts) => {
 function Product() {
   const [allProducts, setAllProducts] = useState([]);
   useEffect(() => getData(setAllProducts), []);
-  console.log(allProducts);
   return (
     <ButtonGroup sx={{ display: "flex", justifyContent: "center", py: 4 }}>
       <Button>Add product</Button>

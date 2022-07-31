@@ -6,13 +6,20 @@ import { model } from "mongoose";
 
 const handler = async (req, res) => {
   if (req.method === "GET") {
-    const product = await Product.find({
-      "category": req.headers.id,
-    })
-      .populate("category")
-      .populate("prices.supermarket");
-    res.status(200).send(product);
-    // .catch((e) => res.send("error", e));
+    if (req.headers.filter == 1) {
+      const product = await Product.find({
+        "category": req.headers.id,
+      })
+        .populate("category")
+        .populate("prices.supermarket");
+      res.status(200).send(product);
+      // .catch((e) => res.send("error", e));
+    } else {
+      const product = await Product.find()
+        .populate("category")
+        .populate("prices.supermarket");
+      res.status(200).send(product);
+    }
   } else if (req.method === "POST") {
     // Check if title and url is provided
     const {

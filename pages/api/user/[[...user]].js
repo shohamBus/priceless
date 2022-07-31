@@ -25,7 +25,6 @@ const handler = async (req, res) => {
       title,
       since: Date.now(),
       products: cartProducts.map((product) => {
-        console.log(product);
         return {
           product: product.product._id,
           qty: product.qty,
@@ -34,7 +33,6 @@ const handler = async (req, res) => {
     });
     const cartcreated = await cart.save();
 
-    console.log("cartcreated", cartcreated);
     //find the user by email
     if (email) {
       await User.findOneAndUpdate({ email }, { $push: { carts: cartcreated } });

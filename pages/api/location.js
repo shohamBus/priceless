@@ -6,15 +6,19 @@ const handler = async (req, res) => {
     const location = await Location.find();
     res.status(200).send(location);
     // .catch((e) => res.send("error", e));
+  } else if (req.method === "DELETE") {
+    const locationId = JSON.parse(req.body);
+    await Location.findByIdAndDelete(locationId);
+    res.status(200);
   } else if (req.method === "POST") {
     // Check if title and url is provided
-    const { city, Latitude, Longitude } = req.body;
-    if ((city, Latitude, Longitude)) {
+    const { city, latitude, longitude } = JSON.parse(req.body);
+    if (city && latitude && longitude) {
       try {
         const location = new Location({
           city,
-          Latitude,
-          Longitude,
+          latitude,
+          longitude,
         });
 
         // Create new location
