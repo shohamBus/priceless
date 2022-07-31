@@ -19,7 +19,7 @@ export default function Session() {
       לא מחובר
       <Button sx={{backgroundColor: "black",mr:5,p:2,color:"#76e346"}} onClick={() =>signIn("google",{
           redirect:false,
-          callbackUrl:`http://localhost:3000/`
+          callbackUrl:process.env.NEXT_PUBLIC_SERVER_URL
       }) }>התחבר</Button>
       </strong>
     </>
