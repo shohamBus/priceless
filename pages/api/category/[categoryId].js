@@ -6,10 +6,8 @@ const handler = async (req, res) => {
   if (req.method === "GET") {
     const { categoryId } = req.query;
     const category = await Category.findById(categoryId);
-    res
-      .status(200)
-      .send(category)
-      .catch((e) => res.send("error", e));
+    res.status(200).send(category);
+    // .catch((e) => res.send("error", e));
   }
   //   res.send(category);
   //   else if (req.method === "POST") {

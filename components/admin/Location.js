@@ -1,5 +1,4 @@
-import { Button, ButtonGroup } from "@mui/material";
-import FormControl from "@mui/material/FormControl";
+import { Button, ButtonGroup, Input } from "@mui/material";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 import DialogLocation from "./DialogLocation";
@@ -71,24 +70,33 @@ function Location() {
           onSelectionModelChange={(locationId) => dialog(locationId)}
         />
       </Box>
-      <DialogLocation locationId={locationId} open={open} setOpen={setOpen} />;
-      <h3>Add new location</h3>
-      <ButtonGroup sx={{ display: "flex", justifyContent: "center", py: 4 }}>
-        <input
+      <DialogLocation locationId={locationId} open={open} setOpen={setOpen} />
+      <ButtonGroup
+        sx={{
+          border: "1px solid black",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          m: "5px  100px",
+        }}
+      >
+        <h3>Add new location</h3>
+        <Input
           onChange={(e) => updateState("city", e.target.value)}
           type="text"
           placeholder="city"
-        ></input>
-        <input
+        ></Input>
+        <Input
           onChange={(e) => updateState("latitude", e.target.value)}
           type="text"
           placeholder=" Latitude"
-        ></input>
-        <input
+        ></Input>
+        <Input
           onChange={(e) => updateState("longitude", e.target.value)}
           type="text"
           placeholder="Longitude"
-        ></input>
+        ></Input>
         <Button onClick={() => addLocation(newLocation)}>Add location</Button>
       </ButtonGroup>
     </>

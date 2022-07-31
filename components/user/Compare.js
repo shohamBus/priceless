@@ -25,7 +25,6 @@ export const Compare = () => {
       products.filter((product) => product.title.includes(inp))
     );
   };
-  console.log("categories", categories);
   return (
     <>
       <div className={style.container}>

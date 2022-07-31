@@ -34,7 +34,6 @@ export default function ContextProvider({ children }) {
       .then((res) => res.json())
       .then((res) => setCategories(res));
   }, []);
-  console.log("supersLocations", supersLocations);
   const categoryFetch = (ID) => {
     fetch(`/api/product`, {
       method: "GET",

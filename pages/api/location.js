@@ -10,6 +10,10 @@ const handler = async (req, res) => {
     const locationId = JSON.parse(req.body);
     await Location.findByIdAndDelete(locationId);
     res.status(200);
+  } else if (req.method === "PATCH") {
+    const location = JSON.parse(req.body);
+    await Location.findByIdAndUpdate(location._id, { ...location });
+    res.status(200);
   } else if (req.method === "POST") {
     // Check if title and url is provided
     const { city, latitude, longitude } = JSON.parse(req.body);

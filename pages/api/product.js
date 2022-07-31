@@ -1,8 +1,6 @@
 import connectDB from "../../middleware/mongodb";
 import Category from "../../models/category";
-import Supermarket from "../../models/supermarket";
 import Product from "../../models/product";
-import { model } from "mongoose";
 
 const handler = async (req, res) => {
   if (req.method === "GET") {
@@ -20,18 +18,28 @@ const handler = async (req, res) => {
         .populate("prices.supermarket");
       res.status(200).send(product);
     }
+  } else if (req.method === "DELETE") {
+    const productId = JSON.parse(req.body);
+    await Product.findByIdAndDelete(productId);
+    res.status(200);
+  } else if (req.method === "PATCH") {
+    const product = JSON.parse(req.body);
+    await Product.findByIdAndUpdate(product._id, { ...product });
+    res.status(200);
   } else if (req.method === "POST") {
     // Check if title and url is provided
     const {
       title,
       description,
       img,
-      category,
+      cat,
       prices,
       supermarket,
       price,
       quantity,
-    } = req.body;
+    } = JSON.parse(req.body);
+    const category = await Category.findById(cat);
+    console.log(title, category);
     if (title && category) {
       try {
         const product = new Product({

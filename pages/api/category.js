@@ -10,14 +10,13 @@ const handler = async (req, res) => {
     const categoryId = JSON.parse(req.body);
     await Category.findByIdAndDelete(categoryId);
     res.status(200);
-    // } else if (req.method === "PATCH") {
-    //   const category = JSON.parse(req.body);
-    //   console.log("category", category);
-    //   await Category.findByIdAndUpdate(category._Id, { ...category });
-    //   res.status(200);
+  } else if (req.method === "PATCH") {
+    const category = JSON.parse(req.body);
+    await Category.findByIdAndUpdate(category._id, { ...category });
+    res.status(200);
   } else if (req.method === "POST") {
     // Check if title and url is provided
-    const title = req.body;
+    const { title, titleheb, img } = JSON.parse(req.body);
     if (title) {
       try {
         const category = new Category({

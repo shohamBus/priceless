@@ -1,4 +1,4 @@
-import { Button, ButtonGroup } from "@mui/material";
+import { Button, ButtonGroup, Input } from "@mui/material";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 import React, { useEffect, useState } from "react";
@@ -70,24 +70,33 @@ function Category() {
           onSelectionModelChange={(categoryId) => dialog(categoryId)}
         />
       </Box>
-      <DialogCategory categoryId={categoryId} open={open} setOpen={setOpen} />;
-      <ButtonGroup sx={{ display: "flex", justifyContent: "center", py: 4 }}>
+      <DialogCategory categoryId={categoryId} open={open} setOpen={setOpen} />
+      <ButtonGroup
+        sx={{
+          border: "1px solid black",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          m: "5px  100px",
+        }}
+      >
         <h3>Add new category</h3>
-        <input
+        <Input
           onChange={(e) => updateState("title", e.target.value)}
           type="text"
           placeholder="enter title"
-        ></input>
-        <input
+        ></Input>
+        <Input
           onChange={(e) => updateState("titleheb", e.target.value)}
           type="text"
           placeholder="enter title in hebrew"
-        ></input>
-        <input
+        ></Input>
+        <Input
           onChange={(e) => updateState("img", e.target.value)}
           type="text"
           placeholder="enter src fot image"
-        ></input>
+        ></Input>
         <Button onClick={() => addCategory(newCategory)}>Add category</Button>
       </ButtonGroup>
     </>

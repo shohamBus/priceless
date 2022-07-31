@@ -1,10 +1,12 @@
 import { AppBar, Toolbar, Typography, Container, Card } from "@mui/material";
 import Image from "next/image";
 import * as React from "react";
+import UserDetails from "./UserDetails";
 import Box from "@mui/material/Box";
 import Session from "./login-btn";
-import DropDownCart from "./DropDownCart";
-import DropDownLocation from "./DropDownLocation";
+import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -15,7 +17,7 @@ const Header = () => {
         display: "flex",
       }}
     >
-      <Card
+      {/* <Card
         sx={{
           background: "whitesmoke",
           position: "absolute",
@@ -25,16 +27,8 @@ const Header = () => {
           left: 0,
           zIndex: 1,
         }}
-      >
-        <div>
-          <h4>:העגלות שלך </h4>
-          <DropDownCart />
-        </div>
-        <div>
-          <h4>:המיקום שלך </h4>
-          <DropDownLocation />
-        </div>
-      </Card>
+      ></Card> */}
+      <UserDetails />
       <Container
         sx={{
           maxWidth: "xl",
@@ -67,6 +61,18 @@ const Header = () => {
             <Image src="/logo.png" height={53} width={297} alt="logo" />
           </Box>{" "}
         </Toolbar>
+        <Link href="./admin">
+          <AdminPanelSettingsIcon
+            sx={{
+              position: "absolute",
+              right: 0,
+              top: 0,
+              cursor: "pointer",
+              height: 40,
+              width: 40,
+            }}
+          />
+        </Link>
       </Container>
     </AppBar>
   );

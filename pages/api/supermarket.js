@@ -1,5 +1,6 @@
 import connectDB from "../../middleware/mongodb";
 import Supermarket from "../../models/supermarket";
+import Location from "../../models/location";
 
 const handler = async (req, res) => {
   if (req.method === "GET") {
@@ -11,11 +12,16 @@ const handler = async (req, res) => {
     const supermarketId = JSON.parse(req.body);
     await Supermarket.findByIdAndDelete(supermarketId);
     res.status(200);
+  } else if (req.method === "PATCH") {
+    const supermarket = JSON.parse(req.body);
+    await Supermarket.findByIdAndUpdate(supermarket._id, { ...supermarket });
+    res.status(200);
   } else if (req.method === "POST") {
     // Check if title and url is provided
-    const { title, titleheb, url } =
+    const { title, titleheb, url, img, loc } =
       // location
       JSON.parse(req.body);
+    const location = await Location.findById(loc);
     if (title && url) {
       try {
         const supermarket = new Supermarket({
@@ -25,7 +31,6 @@ const handler = async (req, res) => {
           img,
           location,
         });
-
         // Create new supermarket
         const supermarketcreated = await supermarket.save();
         return res.status(200).send(supermarketcreated);

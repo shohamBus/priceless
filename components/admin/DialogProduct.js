@@ -5,41 +5,47 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import { ButtonGroup, Input } from "@mui/material";
 
-export default function DialogCategory({ categoryId, open, setOpen }) {
+export default function DialogCategory({ productId, open, setOpen }) {
   useEffect(() => {
-    fetch(`/api/category/${categoryId}`, {
+    fetch(`/api/product/${productId}`, {
       method: "GET",
     })
       .then((res) => res.json())
       .then((res) => {
-        setCategory(res);
+        setProduct(res);
       });
-  }, [categoryId]);
-  const [category, setCategory] = useState({
+  }, [productId]);
+  const [product, setProduct] = useState({
     title: "",
-    titleheb: "",
+    description: "",
+    category: "",
+    // prices: [{ supermarket }],
     img: "",
   });
 
   const updateState = (change, val) => {
     change == "title"
-      ? setCategory({ ...category, title: val })
-      : change == "titleheb"
-      ? setCategory({ ...category, titleheb: val })
-      : change == "img"
-      ? setCategory({ ...category, img: val })
+      ? setProduct({ ...product, title: val })
+      : change == "description"
+      ? setProduct({ ...product, description: val })
+      : change == "cat"
+      ? setProduct({ ...product, cat: val })
+      : change == "prices"
+      ? setProduct({ ...product, prices: val })
+      : change == " img"
+      ? setProduct({ ...product, img: val })
       : "";
   };
-  const deleteCategory = (categoryId) => {
-    fetch(`/api/category`, {
+  const deleteProduct = (productId) => {
+    fetch(`/api/product`, {
       method: "DELETE",
-      body: JSON.stringify(categoryId),
+      body: JSON.stringify(productId),
     });
   };
-  const updateCategory = (category) => {
-    fetch(`/api/category`, {
+  const updateCategory = (product) => {
+    fetch(`/api/product`, {
       method: "PATCH",
-      body: JSON.stringify(category),
+      body: JSON.stringify(product),
     });
   };
   const handleClickOpen = () => {
@@ -66,20 +72,37 @@ export default function DialogCategory({ categoryId, open, setOpen }) {
       >
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            name of the category:{" "}
+            name of the product:{" "}
           </DialogContentText>
           <Input
             onChange={(e) => updateState("title", e.target.value)}
             type="text"
-            value={category.title}
+            value={product.title}
           />
+
           <DialogContentText id="alert-dialog-description">
-            name in hebrew category:{" "}
+            description of product:{" "}
           </DialogContentText>
           <Input
-            onChange={(e) => updateState("titleheb", e.target.value)}
+            onChange={(e) => updateState("description", e.target.value)}
             type="text"
-            value={category.titleheb}
+            value={product.description}
+          />
+          {/* <DialogContentText id="alert-dialog-description">
+            prices:{" "}
+          </DialogContentText>
+          <Input
+            onChange={(e) => updateState("img", e.target.value)}
+            type="text"
+            value={product.prices}
+          /> */}
+          <DialogContentText id="alert-dialog-description">
+            category of product:{" "}
+          </DialogContentText>
+          <Input
+            onChange={(e) => updateState("cat", e.target.value)}
+            type="text"
+            value={product.category?.title}
           />
           <DialogContentText id="alert-dialog-description">
             src image of the category:{" "}
@@ -87,17 +110,17 @@ export default function DialogCategory({ categoryId, open, setOpen }) {
           <Input
             onChange={(e) => updateState("img", e.target.value)}
             type="text"
-            value={category.img}
+            value={product.img}
           />
 
           <ButtonGroup
             sx={{ display: "flex", justifyContent: "center", py: 4 }}
           >
-            <Button onClick={() => updateCategory(category)}>
-              Update category
+            <Button onClick={() => updateCategory(product)}>
+              Update product
             </Button>
-            <Button onClick={() => deleteCategory(category._id)}>
-              Delete category
+            <Button onClick={() => deleteCategory(product._id)}>
+              Delete product
             </Button>
           </ButtonGroup>
         </DialogContent>

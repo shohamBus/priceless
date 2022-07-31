@@ -10,6 +10,8 @@ export default function DialogCategory({ supermarketId, open, setOpen }) {
     title: "",
     titleheb: "",
     url: "",
+    img: "",
+    loc: "",
   });
   useEffect(() => {
     fetch(`/api/supermarket/${supermarketId}`, {
@@ -28,12 +30,22 @@ export default function DialogCategory({ supermarketId, open, setOpen }) {
       ? setSupermarket({ ...supermarket, titleheb: val })
       : change == "url"
       ? setSupermarket({ ...supermarket, url: val })
+      : change == "img"
+      ? setSupermarket({ ...newSupermarket, img: val })
+      : change == "loc"
+      ? setSupermarket({ ...newSupermarket, loc: val })
       : "";
   };
 
   const deleteSupermarket = (supermarket) => {
     fetch(`/api/supermarket`, {
       method: "DELETE",
+      body: JSON.stringify(supermarket),
+    });
+  };
+  const updateSupermarket = (supermarket) => {
+    fetch(`/api/supermarket`, {
+      method: "PATCH",
       body: JSON.stringify(supermarket),
     });
   };
@@ -81,10 +93,28 @@ export default function DialogCategory({ supermarketId, open, setOpen }) {
             type="text"
             value={supermarket.url}
           />
+          <DialogContentText id="alert-dialog-description">
+            web site of the supermarket:{" "}
+          </DialogContentText>
+          <Input
+            onChange={(e) => updateState("img", e.target.value)}
+            type="text"
+            value={supermarket.url}
+          />
+          <DialogContentText id="alert-dialog-description">
+            web site of the supermarket:{" "}
+          </DialogContentText>
+          <Input
+            onChange={(e) => updateState("loc", e.target.value)}
+            type="text"
+            value={supermarket.url}
+          />
           <ButtonGroup
             sx={{ display: "flex", justifyContent: "center", py: 4 }}
           >
-            <Button>Update supermarket</Button>
+            <Button onClick={() => updateSupermarket(supermarket)}>
+              Update supermarket
+            </Button>
             <Button onClick={() => deleteSupermarket(supermarket._id)}>
               Delete supermarket
             </Button>

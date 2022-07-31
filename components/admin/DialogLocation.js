@@ -23,7 +23,7 @@ export default function DialogCategory({ locationId, open, setOpen }) {
 
   const updateState = (change, val) => {
     change == "city"
-      ? setLocation({ ...location, title: val })
+      ? setLocation({ ...location, city: val })
       : change == "latitude"
       ? setLocation({ ...location, latitude: val })
       : change == "longitude"
@@ -34,6 +34,12 @@ export default function DialogCategory({ locationId, open, setOpen }) {
   const deleteLocation = (location) => {
     fetch(`/api/location`, {
       method: "DELETE",
+      body: JSON.stringify(location),
+    });
+  };
+  const updateLocation = (location) => {
+    fetch(`/api/location`, {
+      method: "PATCH",
       body: JSON.stringify(location),
     });
   };
@@ -84,7 +90,9 @@ export default function DialogCategory({ locationId, open, setOpen }) {
           <ButtonGroup
             sx={{ display: "flex", justifyContent: "center", py: 4 }}
           >
-            <Button>Update location</Button>
+            <Button onClick={() => updateLocation(location)}>
+              Update location
+            </Button>
             <Button onClick={() => deleteLocation(location._id)}>
               Delete location
             </Button>
