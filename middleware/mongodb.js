@@ -7,9 +7,9 @@ const connectDB = (handler) => async (req, res) => {
     return handler(req, res);
   }
   // Use new db connection
-  const { DB_USER, DB_PASS } = process.env;
+  const { DB_USER, DB_PASS, DB_HOST } = process.env;
   await mongoose.connect(
-    `mongodb+srv://${DB_USER}:${DB_PASS}@cluster0.hnlsrn0.mongodb.net/Priceless`
+    `mongodb+srv://${DB_USER}:${DB_PASS}@${DB_HOST}/Priceless`
   );
   return handler(req, res);
 };
