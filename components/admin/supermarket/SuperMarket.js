@@ -1,5 +1,4 @@
 import { Button, ButtonGroup, Input, MenuItem, Select } from "@mui/material";
-import FormControl from "@mui/material/FormControl";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 import React, { useEffect, useState } from "react";
@@ -38,8 +37,8 @@ function SuperMarket() {
       ? setNewSupermarket({ ...newSupermarket, url: val })
       : change == "img"
       ? setNewSupermarket({ ...newSupermarket, img: val })
-      : change == "loc"
-      ? setNewSupermarket({ ...newSupermarket, loc: val })
+      : change == "location"
+      ? setNewSupermarket({ ...newSupermarket, location: val })
       : "";
   };
   const addSupermarket = (newSupermarket) => {
@@ -53,7 +52,7 @@ function SuperMarket() {
     { field: "titleheb", headerName: "titleheb", width: 200 },
     { field: "website", headerName: "site", width: 200 },
     { field: "img", headerName: "src", width: 200 },
-    { field: "loc", headerName: "location", width: 200 },
+    { field: "location", headerName: "location", width: 200 },
   ];
 
   const rows = [
@@ -64,7 +63,7 @@ function SuperMarket() {
         titleheb: v.titleheb,
         website: v.url,
         img: v.img,
-        loc: v.location.city,
+        location: v?.location?.city,
       };
     }),
   ];
@@ -77,7 +76,6 @@ function SuperMarket() {
   const handleChange = (event) => {
     setCity(event.target.value);
   };
-
   return (
     <>
       <Box sx={{ height: 400, width: "100%" }}>
@@ -135,7 +133,7 @@ function SuperMarket() {
           label="Location"
           placeholder="location"
           onChange={(e) => {
-            updateState("loc", e.target.value), handleChange(e);
+            updateState("location", e.target.value), handleChange(e);
           }}
         >
           {allLocations.map((location) => (

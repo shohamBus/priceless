@@ -1,11 +1,10 @@
 import connectDB from "../../middleware/mongodb";
 import Supermarket from "../../models/supermarket";
-import Location from "../../models/location";
 
 const handler = async (req, res) => {
   if (req.method === "GET") {
     //get all supermarkets
-    const supermarket = await Supermarket.find();
+    const supermarket = await Supermarket.find().populate("location");
     res.status(200).send(supermarket);
     // .catch((e) => res.send("error", e));
   } else if (req.method === "DELETE") {
@@ -18,10 +17,10 @@ const handler = async (req, res) => {
     res.status(200);
   } else if (req.method === "POST") {
     // Check if title and url is provided
-    const { title, titleheb, url, img, loc } =
+    const { title, titleheb, url, img, location } =
       // location
       JSON.parse(req.body);
-    const location = await Location.findById(loc);
+    // const location = await Location.findById(loc);
     if (title && url) {
       try {
         const supermarket = new Supermarket({

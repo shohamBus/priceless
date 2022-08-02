@@ -9,7 +9,14 @@ function DropDownCart() {
     setCart(event.target.value);
   };
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <Box
+      sx={{
+        minWidth: 120,
+        background: "whitesmoke",
+        cursor: "pointer",
+        zIndex: 1,
+      }}
+    >
       <FormControl fullWidth>
         <InputLabel id="carts-for-user-label"> עגלה</InputLabel>
         <Select

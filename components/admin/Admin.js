@@ -4,10 +4,10 @@ import Nav from "./Nav";
 import HomeIcon from "@mui/icons-material/Home";
 import RefreshIcon from "@mui/icons-material/Refresh";
 
-import Supermarket from "./SuperMarket";
-import Category from "./Category";
-import Location from "./Location";
-import Product from "./Product";
+import Supermarket from "./supermarket/SuperMarket";
+import Category from "./category/Category";
+import Location from "./location/Location";
+import Product from "./product/Product";
 import Link from "next/link";
 
 const navs = [

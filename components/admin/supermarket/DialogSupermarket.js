@@ -11,7 +11,7 @@ export default function DialogCategory({ supermarketId, open, setOpen }) {
     titleheb: "",
     url: "",
     img: "",
-    loc: "",
+    loc: {},
   });
   useEffect(() => {
     fetch(`/api/supermarket/${supermarketId}`, {
@@ -31,9 +31,9 @@ export default function DialogCategory({ supermarketId, open, setOpen }) {
       : change == "url"
       ? setSupermarket({ ...supermarket, url: val })
       : change == "img"
-      ? setSupermarket({ ...newSupermarket, img: val })
-      : change == "loc"
-      ? setSupermarket({ ...newSupermarket, loc: val })
+      ? setSupermarket({ ...supermarket, img: val })
+      : change == "location"
+      ? setSupermarket({ ...supermarket, location: { val } })
       : "";
   };
 
@@ -105,7 +105,7 @@ export default function DialogCategory({ supermarketId, open, setOpen }) {
             web site of the supermarket:{" "}
           </DialogContentText>
           <Input
-            onChange={(e) => updateState("loc", e.target.value)}
+            onChange={(e) => updateState("location", e.target.value)}
             type="text"
             value={supermarket.url}
           />

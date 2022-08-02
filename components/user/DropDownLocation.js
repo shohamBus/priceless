@@ -66,7 +66,14 @@ function DropDownLocation() {
 
   return (
     <>
-      <Box sx={{ minWidth: 200 }}>
+      <Box
+        sx={{
+          minWidth: 200,
+          background: "whitesmoke",
+          cursor: "pointer",
+          zIndex: 1,
+        }}
+      >
         <FormControl fullWidth>
           <InputLabel id="locations"> {locationDisplay.city}</InputLabel>
           <TextField

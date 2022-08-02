@@ -1,5 +1,4 @@
 import connectDB from "../../middleware/mongodb";
-import Category from "../../models/category";
 import Product from "../../models/product";
 
 const handler = async (req, res) => {
@@ -32,14 +31,13 @@ const handler = async (req, res) => {
       title,
       description,
       img,
-      cat,
+      category,
       prices,
       supermarket,
       price,
       quantity,
     } = JSON.parse(req.body);
-    const category = await Category.findById(cat);
-    console.log(title, category);
+    console.log(title, category, prices);
     if (title && category) {
       try {
         const product = new Product({

@@ -2,7 +2,7 @@ import { AppBar, Box, Container, Toolbar, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
-function Header(props) {
+function Header() {
   return (
     <AppBar
       position="static"

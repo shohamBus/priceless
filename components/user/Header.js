@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, Container, Card } from "@mui/material";
+import { AppBar, Toolbar, Typography, Container } from "@mui/material";
 import Image from "next/image";
 import * as React from "react";
 import UserDetails from "./UserDetails";
@@ -17,17 +17,6 @@ const Header = () => {
         display: "flex",
       }}
     >
-      {/* <Card
-        sx={{
-          background: "whitesmoke",
-          position: "absolute",
-          display: "flex",
-          flexDirection: "row",
-          top: 0,
-          left: 0,
-          zIndex: 1,
-        }}
-      ></Card> */}
       <UserDetails />
       <Container
         sx={{

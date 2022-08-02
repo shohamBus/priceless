@@ -19,7 +19,7 @@ export default function DialogCategory({ productId, open, setOpen }) {
     title: "",
     description: "",
     category: "",
-    // prices: [{ supermarket }],
+    prices: [],
     img: "",
   });
 
@@ -28,21 +28,22 @@ export default function DialogCategory({ productId, open, setOpen }) {
       ? setProduct({ ...product, title: val })
       : change == "description"
       ? setProduct({ ...product, description: val })
-      : change == "cat"
-      ? setProduct({ ...product, cat: val })
+      : change == "category"
+      ? setProduct({ ...product, category: val })
       : change == "prices"
       ? setProduct({ ...product, prices: val })
       : change == " img"
       ? setProduct({ ...product, img: val })
       : "";
   };
+
   const deleteProduct = (productId) => {
     fetch(`/api/product`, {
       method: "DELETE",
       body: JSON.stringify(productId),
     });
   };
-  const updateCategory = (product) => {
+  const updateProduct = (product) => {
     fetch(`/api/product`, {
       method: "PATCH",
       body: JSON.stringify(product),
@@ -58,10 +59,7 @@ export default function DialogCategory({ productId, open, setOpen }) {
   const handleContent = (e) => {
     return (newTitle = e.target.value);
   };
-  //send the cart product the title and the email
-  //   const handleClick = async () => {
-  // await axios.patch(`/api/user`, { cartProducts, email, title });
-  //   };
+
   return (
     <div>
       <Dialog
@@ -79,7 +77,6 @@ export default function DialogCategory({ productId, open, setOpen }) {
             type="text"
             value={product.title}
           />
-
           <DialogContentText id="alert-dialog-description">
             description of product:{" "}
           </DialogContentText>
@@ -88,38 +85,54 @@ export default function DialogCategory({ productId, open, setOpen }) {
             type="text"
             value={product.description}
           />
-          {/* <DialogContentText id="alert-dialog-description">
-            prices:{" "}
-          </DialogContentText>
-          <Input
-            onChange={(e) => updateState("img", e.target.value)}
-            type="text"
-            value={product.prices}
-          /> */}
           <DialogContentText id="alert-dialog-description">
             category of product:{" "}
           </DialogContentText>
           <Input
-            onChange={(e) => updateState("cat", e.target.value)}
+            onChange={(e) => updateState("category", e.target.value)}
             type="text"
             value={product.category?.title}
           />
           <DialogContentText id="alert-dialog-description">
-            src image of the category:{" "}
+            src image of the product:{" "}
           </DialogContentText>
           <Input
             onChange={(e) => updateState("img", e.target.value)}
             type="text"
             value={product.img}
           />
+          <DialogContentText id="alert-dialog-description">
+            ditails of supermarkets:{" "}
+          </DialogContentText>
+          {product.prices?.map((v) => {
+            return (
+              <>
+                <Input
+                  onChange={(e) => updateState("img", e.target.value)}
+                  type="text"
+                  value={v.supermarket.title}
+                />
+                <Input
+                  onChange={(e) => updateState("img", e.target.value)}
+                  type="text"
+                  value={v.price}
+                />
+                <Input
+                  onChange={(e) => updateState("img", e.target.value)}
+                  type="text"
+                  value={v.quantity}
+                />
+              </>
+            );
+          })}
 
           <ButtonGroup
             sx={{ display: "flex", justifyContent: "center", py: 4 }}
           >
-            <Button onClick={() => updateCategory(product)}>
+            <Button onClick={() => updateProduct(product)}>
               Update product
             </Button>
-            <Button onClick={() => deleteCategory(product._id)}>
+            <Button onClick={() => deleteProduct(product._id)}>
               Delete product
             </Button>
           </ButtonGroup>

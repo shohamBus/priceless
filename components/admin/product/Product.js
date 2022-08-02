@@ -1,9 +1,16 @@
-import { Button, ButtonGroup, Input, MenuItem, Select } from "@mui/material";
+import {
+  Button,
+  ButtonGroup,
+  Input,
+  InputLabel,
+  MenuItem,
+  Select,
+} from "@mui/material";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 import React, { useEffect, useState } from "react";
 import DialogProduct from "./DialogProduct";
-const getData = (setAllProducts, setAllCategories) => {
+const getData = (setAllProducts, setAllCategories, setAllSupers) => {
   fetch(`/api/product`, {
     method: "GET",
   })
@@ -14,6 +21,11 @@ const getData = (setAllProducts, setAllCategories) => {
   })
     .then((res) => res.json())
     .then((res) => setAllCategories(res));
+  fetch(`/api/supermarket`, {
+    method: "GET",
+  })
+    .then((res) => res.json())
+    .then((res) => setAllSupers(res));
 };
 
 function Product() {
@@ -21,27 +33,48 @@ function Product() {
   const [open, setOpen] = React.useState(false);
   const [productId, setProductId] = useState([]);
   const [allCategories, setAllCategories] = useState([]);
+  const [allSupers, setAllSupers] = useState([]);
+
   const [newProduct, setNewProduct] = useState({
     title: "",
     description: "",
-    cat: "",
-    // prices: [{ supermarket }],
+    category: "",
+    prices: [],
     img: "",
   });
-  console.log("newProduct", newProduct);
-  useEffect(() => getData(setAllProducts, setAllCategories), []);
+  const [newPrices, setNewPrices] = useState([]);
+  useEffect(() => getData(setAllProducts, setAllCategories, setAllSupers), []);
+  useEffect(() => {
+    setNewPrices(
+      allSupers.map((s) => ({ supermarket: s._id, price: "", quantity: "" }))
+    );
+  }, [allSupers]);
   const updateState = (change, val) => {
     change == "title"
       ? setNewProduct({ ...newProduct, title: val })
       : change == "description"
       ? setNewProduct({ ...newProduct, description: val })
-      : change == "cat"
-      ? setNewProduct({ ...newProduct, cat: val })
+      : change == "category"
+      ? setNewProduct({ ...newProduct, category: val })
       : change == "prices"
       ? setNewProduct({ ...newProduct, prices: val })
       : change == " img"
       ? setNewProduct({ ...newProduct, img: val })
       : "";
+  };
+  const updatePricesState = (supermarketId, key, val) => {
+    setNewPrices((prevState) => {
+      const newPrice = prevState.map((item) => {
+        return item.supermarket == supermarketId
+          ? {
+              ...item,
+              [key]: val,
+            }
+          : item;
+      });
+      return newPrice;
+    });
+    updateState("prices", newPrices);
   };
   const addProduct = (newProduct) => {
     fetch(`/api/product`, {
@@ -53,7 +86,6 @@ function Product() {
     { field: "product_name", headerName: "Name", width: 200 },
     { field: "description", headerName: "description", width: 200 },
     { field: "category", headerName: "category name", width: 200 },
-    // { field: "prices", headerName: "prices", width: 200 },
     { field: "img", headerName: "src for image", width: 200 },
   ];
 
@@ -64,7 +96,6 @@ function Product() {
         product_name: v.title,
         description: v.description,
         category: v.category.title,
-        // prices: [{ supermarket }],
         img: v.img,
       };
     }),
@@ -78,7 +109,6 @@ function Product() {
   const handleChange = (event) => {
     setCategory(event.target.value);
   };
-
   return (
     <>
       <Box sx={{ height: 400, width: "100%" }}>
@@ -114,11 +144,6 @@ function Product() {
           type="text"
           placeholder="enter description"
         ></Input>
-        {/* <Input
-          onChange={(e) => updateState("prices", e.target.value)}
-          type="text"
-          placeholder="enter prices"
-        ></Input> */}
         <Select
           sx={{ width: 200 }}
           id="demo-simple-select"
@@ -126,7 +151,7 @@ function Product() {
           label="Category"
           placeholder="category"
           onChange={(e) => {
-            updateState("cat", e.target.value), handleChange(e);
+            updateState("category", e.target.value), handleChange(e);
           }}
         >
           {allCategories.map((category) => (
@@ -135,6 +160,42 @@ function Product() {
             </MenuItem>
           ))}
         </Select>
+        {allSupers.map((supermarket) => (
+          <InputLabel
+            sx={{ display: "flex", justifyContent: "center" }}
+            key={supermarket._id}
+          >
+            <Input
+              value={supermarket.title}
+              onChange={(e) =>
+                updatePricesState(
+                  supermarket._id,
+                  "supermarket",
+                  e.target.value
+                )
+              }
+              type="text"
+              key={supermarket.title}
+            />
+            <Input
+              placeholder="price"
+              onChange={(e) =>
+                updatePricesState(supermarket._id, "price", e.target.value)
+              }
+              type="text"
+              key={supermarket._id}
+            />
+            <Input
+              placeholder="quantity"
+              onChange={(e) =>
+                updatePricesState(supermarket._id, "quantity", e.target.value)
+              }
+              type="text"
+              key={supermarket._id}
+            />
+          </InputLabel>
+        ))}
+
         <Input
           onChange={(e) => updateState("img", e.target.value)}
           type="text"
