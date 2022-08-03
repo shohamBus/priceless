@@ -84,8 +84,6 @@ function SuperMarket() {
           columns={columns}
           pageSize={5}
           rowsPerPageOptions={[5]}
-          checkboxSelection
-          disableSelectionOnClick
           onSelectionModelChange={(supermarketId) => dialog(supermarketId)}
         />
       </Box>

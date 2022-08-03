@@ -1,4 +1,3 @@
-// import { loadComponents } from "next/dist/server/load-components";
 import React, { useState, useContext, useEffect } from "react";
 const CompareContext = React.createContext();
 // const CompareUpdateContext = React.createContext();
@@ -12,10 +11,11 @@ export default function ContextProvider({ children }) {
   const [productsFilter, setProductsFilter] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
   const [currentUser, setCurrentUser] = useState([]);
-  const [supersLocations, setSupersLocations] = useState([]);
+  const [allSupers, setAllSupers] = useState([]);
   const [locations, setLocations] = useState([]);
   const [categories, setCategories] = useState([]);
   const [positions, setPositions] = useState([]);
+  const [cart, setCart] = useState([]);
   useEffect(() => {
     fetch(`/api/location`, {
       method: "GET",
@@ -27,7 +27,7 @@ export default function ContextProvider({ children }) {
       method: "GET",
     })
       .then((res) => res.json())
-      .then((res) => setSupersLocations(res));
+      .then((res) => setAllSupers(res.map((v) => ({ ...v, checked: false }))));
     fetch(`/api/category`, {
       method: "GET",
     })
@@ -46,6 +46,7 @@ export default function ContextProvider({ children }) {
       });
   };
 
+  //get the current user
   const getUser = (email) => {
     fetch(`/api/user/${email}`, {
       method: "GET",
@@ -55,26 +56,7 @@ export default function ContextProvider({ children }) {
         setCurrentUser(res[0].carts);
       });
   };
-  const [supers, setSupers] = useState([
-    {
-      name: "victory",
-      nameheb: "ויקטורי",
-      _id: "62c16fa07033075c47fdd720",
-      checked: false,
-    },
-    {
-      name: "shufersal",
-      nameheb: "שופרסל",
-      _id: "62c176532e626395371b1078",
-      checked: false,
-    },
-    {
-      name: "rami-levi",
-      nameheb: "רמי לוי",
-      _id: "62c16fc87033075c47fdd722",
-      checked: false,
-    },
-  ]);
+
   // Add to cart
   const addToCart = (product) => {
     const found = cartProducts.find((item) => {
@@ -121,8 +103,6 @@ export default function ContextProvider({ children }) {
       value={{
         products,
         setProducts,
-        supers,
-        setSupers,
         productsFilter,
         setProductsFilter,
         cartProducts,
@@ -135,10 +115,13 @@ export default function ContextProvider({ children }) {
         currentUser,
         setCurrentUser,
         locations,
-        supersLocations,
+        allSupers,
+        setAllSupers,
         positions,
         setPositions,
         categories,
+        cart,
+        setCart,
       }}
     >
       {children}

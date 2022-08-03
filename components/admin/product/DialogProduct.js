@@ -13,6 +13,7 @@ export default function DialogCategory({ productId, open, setOpen }) {
       .then((res) => res.json())
       .then((res) => {
         setProduct(res);
+        setNewPrices(res.prices);
       });
   }, [productId]);
   const [product, setProduct] = useState({
@@ -22,6 +23,7 @@ export default function DialogCategory({ productId, open, setOpen }) {
     prices: [],
     img: "",
   });
+  const [newPrice, setNewPrices] = useState([]);
 
   const updateState = (change, val) => {
     change == "title"
@@ -37,6 +39,20 @@ export default function DialogCategory({ productId, open, setOpen }) {
       : "";
   };
 
+  const updatePricesState = (supermarketId, key, val) => {
+    setNewPrices((prevState) => {
+      const newPrice = prevState.map((item) => {
+        return item.supermarket == supermarketId
+          ? {
+              ...item,
+              [key]: val,
+            }
+          : item;
+      });
+      return newPrice;
+    });
+    updateState("prices", newPrice);
+  };
   const deleteProduct = (productId) => {
     fetch(`/api/product`, {
       method: "DELETE",
@@ -107,21 +123,44 @@ export default function DialogCategory({ productId, open, setOpen }) {
           {product.prices?.map((v) => {
             return (
               <>
-                <Input
-                  onChange={(e) => updateState("img", e.target.value)}
-                  type="text"
-                  value={v.supermarket.title}
-                />
-                <Input
-                  onChange={(e) => updateState("img", e.target.value)}
-                  type="text"
-                  value={v.price}
-                />
-                <Input
-                  onChange={(e) => updateState("img", e.target.value)}
-                  type="text"
-                  value={v.quantity}
-                />
+                <div>
+                  <Input
+                    sx={{ width: 100 }}
+                    onChange={(e) =>
+                      updatePricesState(
+                        v.supermarket._id,
+                        "supermarket",
+                        e.target.value
+                      )
+                    }
+                    type="text"
+                    value={v.supermarket.title}
+                  />
+                  <Input
+                    sx={{ width: 70 }}
+                    onChange={(e) =>
+                      updatePricesState(
+                        v.supermarket._id,
+                        "price",
+                        e.target.value
+                      )
+                    }
+                    type="text"
+                    value={v.price}
+                  />
+                  <Input
+                    sx={{ width: 70 }}
+                    onChange={(e) =>
+                      updatePricesState(
+                        v.supermarket._id,
+                        "quantity",
+                        e.target.value
+                      )
+                    }
+                    type="text"
+                    value={v.quantity}
+                  />
+                </div>
               </>
             );
           })}

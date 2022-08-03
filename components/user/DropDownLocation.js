@@ -8,7 +8,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { useCompare } from "../../context/CompareContext";
 function DropDownLocation() {
-  const { locations, supersLocations, positions, setPositions } = useCompare();
+  const { locations, allSupers, positions, setPositions } = useCompare();
   const [locationDisplay, setLocationDisplay] = useState([]);
 
   useEffect(() => {
@@ -29,12 +29,12 @@ function DropDownLocation() {
       });
     } else {
     }
-  }, [supersLocations]);
+  }, [allSupers]);
 
   //calculate the distance from the current location to the supers
   const distance = () => {
     let pos = [];
-    supersLocations.map((v) => {
+    allSupers.map((v) => {
       let name = v.title;
       let lat1 = locationDisplay.latitude;
       let lon1 = locationDisplay.longitude;
@@ -68,6 +68,7 @@ function DropDownLocation() {
     <>
       <Box
         sx={{
+          position: "flex",
           minWidth: 200,
           background: "whitesmoke",
           cursor: "pointer",
@@ -99,17 +100,3 @@ function DropDownLocation() {
 }
 
 export default DropDownLocation;
-// <SvgIcon color="primary">
-//   <Image src="/search.png" width={20} height={20} alt="search" />
-// </SvgIcon>
-
-// startAdornment: (
-// <InputAdornment position="end">
-//   <Image
-//     src="/search.png"
-//     width={20}
-//     height={20}
-//     alt="search"
-//   />
-// </InputAdornment>
-// ),

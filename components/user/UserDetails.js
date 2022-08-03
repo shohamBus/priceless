@@ -9,19 +9,13 @@ import DropDownCart from "./DropDownCart";
 import DropDownLocation from "./DropDownLocation";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { FilledInput } from "@mui/material";
+import { Card } from "@mui/material";
 
 const StyledSpeedDial = styled(SpeedDial)(({ theme }) => ({
   position: "block",
 
-  "&.MuiSpeedDial-directionUp, &.MuiSpeedDial-directionLeft": {
-    bottom: theme.spacing(2),
-    right: theme.spacing(2),
-  },
-  "&.MuiSpeedDial-directionDown, &.MuiSpeedDial-directionRight": {
-    top: theme.spacing(2),
-    left: theme.spacing(2),
-  },
+  "&.MuiSpeedDial-directionUp, &.MuiSpeedDial-directionLeft": {},
+  "&.MuiSpeedDial-directionDown, &.MuiSpeedDial-directionRight": {},
 }));
 
 export default function UserDetails() {
@@ -35,7 +29,7 @@ export default function UserDetails() {
     {
       icon: <LocationOnIcon />,
       name: "location",
-      checked: false,
+      checked: true,
       comp: <DropDownLocation />,
     },
   ]);
@@ -50,7 +44,12 @@ export default function UserDetails() {
               checked: !item.checked,
               comp: item.comp,
             }
-          : item;
+          : {
+              icon: item.icon,
+              name: item.name,
+              checked: !item.checked,
+              comp: item.comp,
+            };
       });
       return newAction;
     });
@@ -60,13 +59,14 @@ export default function UserDetails() {
       sx={{
         transform: "translateZ(0px)",
         flexGrow: 1,
+        display: "block",
       }}
     >
       <FormControl
         component="fieldset"
         sx={{ mt: 1, display: "flex" }}
       ></FormControl>
-      <Box sx={{ position: "absolute", m: 2, height: 20 }}>
+      <Box sx={{ position: "absolute", m: 2, height: 20, left: 0, top: 0 }}>
         <StyledSpeedDial
           ariaLabel="SpeedDial playground example"
           FabProps={{
@@ -86,7 +86,9 @@ export default function UserDetails() {
             ></SpeedDialAction>
           ))}
         </StyledSpeedDial>
-        <div>{actions.map((action) => action.checked && action.comp)}</div>
+        <Card sx={{ display: "block" }}>
+          {actions.map((action) => action.checked && action.comp)}
+        </Card>
       </Box>
     </Box>
   );

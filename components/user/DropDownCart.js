@@ -2,8 +2,7 @@ import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React, { useState } from "react";
 import { useCompare } from "../../context/CompareContext";
 function DropDownCart() {
-  const [cart, setCart] = useState([]);
-  const { currentUser, setCartProducts } = useCompare();
+  const { cart, setCart, currentUser, setCartProducts } = useCompare();
   const handleChange = (event) => {
     setCartProducts(event.target.value.products);
     setCart(event.target.value);
@@ -11,6 +10,7 @@ function DropDownCart() {
   return (
     <Box
       sx={{
+        position: "flex",
         minWidth: 120,
         background: "whitesmoke",
         cursor: "pointer",

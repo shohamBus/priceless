@@ -65,8 +65,6 @@ function Location() {
           columns={columns}
           pageSize={5}
           rowsPerPageOptions={[5]}
-          checkboxSelection
-          disableSelectionOnClick
           onSelectionModelChange={(locationId) => dialog(locationId)}
         />
       </Box>

@@ -11,10 +11,10 @@ import axios from "axios";
 
 export default function AlertDialog() {
   const { cartProducts, getUser } = useCompare();
-  const [open, setOpen] = React.useState(false);
   const { data: session, status } = useSession();
+  const [open, setOpen] = React.useState(false);
   let title = "";
-  //if user get details
+  //if user sign in
   const email = session?.user?.email;
   useEffect(() => {
     if (email) {
@@ -94,5 +94,3 @@ export default function AlertDialog() {
     </div>
   );
 }
-
-//  {axios.patch(`/api/user`, { cartProducts, email,title })}

@@ -37,7 +37,6 @@ const handler = async (req, res) => {
       price,
       quantity,
     } = JSON.parse(req.body);
-    console.log(title, category, prices);
     if (title && category) {
       try {
         const product = new Product({

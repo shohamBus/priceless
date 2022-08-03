@@ -7,21 +7,19 @@ import { AppBar, MenuItem, Toolbar } from "@mui/material";
 import { Container } from "react-bootstrap";
 
 export const SupersCheckbox = () => {
-  const { supers, setSupers, positions } = useCompare();
+  const { allSupers, setAllSupers, positions } = useCompare();
   //check or not check the choosen super
   const handleChange = (obj) => {
-    setSupers((prevState) => {
-      const newSupers = prevState.map((item) => {
-        return item.name === obj.name
+    setAllSupers((prevState) => {
+      const newSuper = prevState.map((item) => {
+        return item.title === obj.title
           ? {
-              name: item.name,
-              nameheb: item.nameheb,
+              ...item,
               checked: !item.checked,
-              _id: item._id,
             }
           : item;
       });
-      return newSupers;
+      return newSuper;
     });
   };
 
@@ -52,94 +50,31 @@ export const SupersCheckbox = () => {
                 display: { xs: "flex", md: "flex" },
               }}
             >
-              <MenuItem
-                className={styles.imageclass}
-                onClick={(e) => handleChange(supers[0])}
-              >
-                {supers[0].checked && (
-                  <div style={{ position: "absolute", zIndex: 1 }}>
-                    <Image
-                      src="/super.png"
-                      width={40}
-                      height={40}
-                      alt="rami-levi"
-                    />
-                  </div>
-                )}
+              {allSupers.map((v) => (
+                <MenuItem
+                  key={v._id}
+                  className={styles.imageclass}
+                  onClick={(e) => handleChange(v)}
+                >
+                  {v.checked && (
+                    <div style={{ position: "absolute", zIndex: 1 }}>
+                      <Image
+                        src="/super.png"
+                        width={40}
+                        height={40}
+                        alt={v.title}
+                      />
+                    </div>
+                  )}
 
-                <Image
-                  src="/victory.png"
-                  width={120}
-                  height={40}
-                  alt="victory"
-                />
+                  <Image src={v.img} width={120} height={40} alt={v.title} />
 
-                {positions.map((v) =>
-                  v.name == supers[0].name
-                    ? `המרחק ממקומך הוא: ${v.d} קמ`
-                    : null
-                )}
-              </MenuItem>
-              <MenuItem
-                className={styles.imageclass}
-                onClick={(e) => handleChange(supers[1])}
-              >
-                {supers[1].checked && (
-                  <div style={{ position: "absolute", zIndex: 1 }}>
-                    <Image
-                      src="/super.png"
-                      width={40}
-                      height={40}
-                      alt="rami-levi"
-                    />
-                  </div>
-                )}
-                <Image
-                  src="/shufersal.png"
-                  width={120}
-                  height={40}
-                  alt="sufersal"
-                />
-
-                {positions.map((v) =>
-                  v.name == supers[1].name
-                    ? `המרחק ממקומך הוא: ${v.d} קמ`
-                    : null
-                )}
-              </MenuItem>
-              <MenuItem
-                className={styles.imageclass}
-                onClick={(e) => handleChange(supers[2])}
-              >
-                {supers[2].checked && (
-                  <div
-                    style={{
-                      position: "absolute",
-                      zIndex: 1,
-                    }}
-                  >
-                    <Image
-                      src="/super.png"
-                      width={40}
-                      height={40}
-                      alt="rami-levi"
-                    />
-                  </div>
-                )}
-                <Image
-                  src="/rami-levi.png"
-                  width={120}
-                  height={40}
-                  alt="rami-levi"
-                />
-
-                {positions.map((v) =>
-                  v.name == supers[2].name
-                    ? `המרחק ממקומך הוא: ${v.d} קמ`
-                    : null
-                )}
-              </MenuItem>
-            </Box>{" "}
+                  {positions.map((p) =>
+                    p.name == v.title ? `המרחק ממקומך הוא: ${p.d} קמ` : null
+                  )}
+                </MenuItem>
+              ))}
+            </Box>
           </Toolbar>
         </Container>
       </AppBar>

@@ -7,8 +7,21 @@ import style from "../../styles/SumSupers.module.css";
 
 import SumSupers from "./SumSupers";
 export default function DataTable() {
-  const { supers, cartProducts, setCartProducts, addToCart, decrement } =
-    useCompare();
+  const {
+    allSupers,
+    cartProducts,
+    setCartProducts,
+    addToCart,
+    decrement,
+    cart,
+  } = useCompare();
+  const deleteCart = () => {
+    fetch(`/api/cart`, {
+      method: "DELETE",
+      body: JSON.stringify(cart._id),
+    });
+    setCartProducts([]);
+  };
 
   const columns = [
     {
@@ -45,11 +58,11 @@ export default function DataTable() {
       width: 100,
     },
 
-    ...supers
+    ...allSupers
       .filter((currentSuper) => currentSuper.checked)
       .map((item) => ({
-        field: item.name,
-        headerName: item.nameheb,
+        field: item.title,
+        headerName: item.titleheb,
       })),
   ];
   const supersPrices = {};
@@ -59,17 +72,17 @@ export default function DataTable() {
       //each row of product and compare betwrrn the supers
       row.product.prices.forEach((price) => {
         const supermarket = price.supermarket;
-        const superChecked = supers.find(
+        const superChecked = allSupers.find(
           (currentSuper) =>
             currentSuper._id === supermarket._id && currentSuper.checked
         );
 
         if (superChecked) {
           const priceSum = price.price * row.qty;
-          supersPrices[superChecked.name] = priceSum.toFixed(2);
+          supersPrices[superChecked.title] = priceSum.toFixed(2);
 
-          supersPricesSum[superChecked.nameheb] =
-            (supersPricesSum[superChecked.nameheb] ?? 0) + priceSum;
+          supersPricesSum[superChecked.titleheb] =
+            (supersPricesSum[superChecked.titleheb] ?? 0) + priceSum;
         }
       });
       return {
@@ -108,15 +121,12 @@ export default function DataTable() {
   return (
     <div dir="rtl" style={{ height: 600, width: "100%" }}>
       <DataGrid
-        // autoHeight
         rows={rows}
         columns={columns}
         pageSize={100}
         rowsPerPageOptions={[10]}
-        // checkboxSelection
-        // disableSelectionOnClick
       />
-      {supers.some((v) => v.checked) && <SumSupers sum={sum} />}
+      {allSupers.some((v) => v.checked) && <SumSupers sum={sum} />}
       <div className={style.buttons}>
         <Dialog />
         <Button
@@ -125,6 +135,13 @@ export default function DataTable() {
         >
           {" "}
           נקה עגלה
+        </Button>
+        <Button
+          sx={{ backgroundColor: "#76e346", color: "black", p: 2, m: 2 }}
+          onClick={() => deleteCart()}
+        >
+          {" "}
+          מחק עגלה
         </Button>
       </div>
     </div>

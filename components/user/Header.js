@@ -1,14 +1,24 @@
 import { AppBar, Toolbar, Typography, Container } from "@mui/material";
 import Image from "next/image";
-import * as React from "react";
+import React, { useEffect } from "react";
 import UserDetails from "./UserDetails";
 import Box from "@mui/material/Box";
 import Session from "./login-btn";
+import { useSession } from "next-auth/react";
+import { useCompare } from "../../context/CompareContext";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
-
 import Link from "next/link";
 
 const Header = () => {
+  const { getUser } = useCompare();
+  const { data: session, status } = useSession();
+  const email = session?.user?.email;
+  useEffect(() => {
+    if (email) {
+      getUser(email);
+    }
+  }, [session]);
+  // const { NEXTAUTH_SECRET } = process.env;
   return (
     <AppBar
       position="static"
@@ -17,10 +27,9 @@ const Header = () => {
         display: "flex",
       }}
     >
-      <UserDetails />
+      <UserDetails className="" />
       <Container
         sx={{
-          maxWidth: "xl",
           display: "flex",
           justifyContent: "center",
           padding: "20px",
@@ -50,18 +59,20 @@ const Header = () => {
             <Image src="/logo.png" height={53} width={297} alt="logo" />
           </Box>{" "}
         </Toolbar>
-        <Link href="./admin">
-          <AdminPanelSettingsIcon
-            sx={{
-              position: "absolute",
-              right: 0,
-              top: 0,
-              cursor: "pointer",
-              height: 40,
-              width: 40,
-            }}
-          />
-        </Link>
+        {email == "shohambuskila@gmail.com" && (
+          <Link href="./admin">
+            <AdminPanelSettingsIcon
+              sx={{
+                position: "absolute",
+                right: 0,
+                top: 0,
+                cursor: "pointer",
+                height: 40,
+                width: 40,
+              }}
+            />
+          </Link>
+        )}
       </Container>
     </AppBar>
   );

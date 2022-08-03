@@ -8,6 +8,10 @@ const handler = async (req, res) => {
       .status(200)
       .send(cart)
       .catch((e) => res.send("error", e));
+  } else if (req.method === "DELETE") {
+    const cart = JSON.parse(req.body);
+    await Cart.findByIdAndDelete(cart);
+    res.status(200);
   } else if (req.method === "POST") {
     // Check if title and url is provided
     const { title } = req.body;
